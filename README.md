@@ -65,14 +65,18 @@ echo $url_dl
     ├── doh
     │   └── 8.8.8.8
     │       ├── mirror.ghproxy.com
+    │       │   ├── config_fakeip.json
     │       │   └── config.json
     │       └── testingcf.jsdelivr.net
+    │           ├── config_fakeip.json
     │           └── config.json
     └── dot
         └── 8.8.8.8
             ├── mirror.ghproxy.com
+            │   ├── config_fakeip.json
             │   └── config.json
             └── testingcf.jsdelivr.net
+                ├── config_fakeip.json
                 └── config.json
 ```
 
@@ -219,6 +223,12 @@ https://ghproxy.net/https://raw.githubusercontent.com/senzyo/sing-box-rules/mast
 https://raw.githubusercontent.com/senzyo/sing-box-templates/normal/tun/doh/8.8.8.8/mirror.ghproxy.com/config.json
 ```
 
+如果要使用 [FakeIP](https://sing-box.sagernet.org/zh/configuration/dns/fakeip/), 选择:
+
+```
+https://raw.githubusercontent.com/senzyo/sing-box-templates/normal/tun/doh/8.8.8.8/mirror.ghproxy.com/config_fakeip.json
+```
+
 或者使用入站方式为 `mixed` 的模板:
 
 ```
@@ -231,6 +241,12 @@ https://raw.githubusercontent.com/senzyo/sing-box-templates/normal/mixed/doh/8.8
 
 ```
 https://raw.githubusercontent.com/senzyo/sing-box-templates/normal/tun/doh/8.8.8.8/mirror.ghproxy.com/config.json
+```
+
+如果要使用 [FakeIP](https://sing-box.sagernet.org/zh/configuration/dns/fakeip/), 选择:
+
+```
+https://raw.githubusercontent.com/senzyo/sing-box-templates/normal/tun/doh/8.8.8.8/mirror.ghproxy.com/config_fakeip.json
 ```
 
 ## 4. 注意事项
