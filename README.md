@@ -104,7 +104,7 @@ DNS 协议使用 `DNS over HTTPS` 或 `DNS over TLS` 或 `DNS over HTTP3`, 更�
 
 `中国 DNS` 包括 `Ali DNS` 和 `DNSPod`。
 
-`国际 DNS` 包括 `AdGuard DNS`, `Cloudflare DNS` 和 `Google DNS`。
+`国际 DNS` 包括 `AdGuard DNS`, `Cisco OpenDNS`, `Cloudflare DNS` 和 `Google DNS`。
 
 更多 DNS 服务商 [参考](https://senzyo.net/2022-22/)。
 

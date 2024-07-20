@@ -30,19 +30,23 @@ declare -A dnspod=(
 )
 
 declare -A adguard=(
-  ["doh"]="https://94.140.14.140/dns-query"
-  ["dot"]="tls://94.140.14.140"
-  ["h3"]="h3://94.140.14.140/dns-query"
+  ["doh"]="https://unfiltered.adguard-dns.com/dns-query"
+  ["dot"]="tls://unfiltered.adguard-dns.com"
+  ["h3"]="h3://unfiltered.adguard-dns.com/dns-query"
 )
 declare -A cloudflare=(
-  ["doh"]="https://1.1.1.1/dns-query"
-  ["dot"]="tls://1.1.1.1"
-  ["h3"]="h3://1.1.1.1/dns-query"
+  ["doh"]="https://cloudflare-dns.com/dns-query"
+  ["dot"]="tls://1dot1dot1dot1.cloudflare-dns.com"
+  ["h3"]="h3://cloudflare-dns.com/dns-query"
 )
 declare -A google=(
-  ["doh"]="https://8.8.8.8/dns-query"
-  ["dot"]="tls://8.8.8.8"
-  ["h3"]="h3://8.8.8.8/dns-query"
+  ["doh"]="https://dns.google/dns-query"
+  ["dot"]="tls://dns.google"
+  ["h3"]="h3://dns.google/dns-query"
+)
+declare -A opendns=(
+  ["doh"]="https://dns.opendns.com/dns-query"
+  ["dot"]="tls://dns.opendns.com"
 )
 
 CDN=(
@@ -55,7 +59,7 @@ CDN=(
 
 Protocol=(doh dot h3)
 DNS_China_Server=(ali dnspod)
-DNS_Global_Server=(adguard cloudflare google)
+DNS_Global_Server=(adguard cloudflare google opendns)
 
 function generate() {
   path=$output_dir/$protocol/$dns_china_server/$dns_global_server/$cdn_server
