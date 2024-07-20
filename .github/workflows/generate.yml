@@ -6,15 +6,15 @@ on:
     branches: [master]
 
 jobs:
-  deploy-normal:
-    name: Deploy Normal
+  deploy:
+    name: Deploy
     runs-on: ubuntu-latest
     steps:
       - name: Git config
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git config --global init.defaultBranch normal
+          git config --global init.defaultBranch public
       - name: Generate Templates
         run: |
           curl -fsSLo generate.sh https://raw.githubusercontent.com/senzyo/sing-box-templates/master/generate.sh
@@ -33,4 +33,4 @@ jobs:
           git add -A mixed tun
           git commit -m "Generate"
           git remote add origin https://${{ secrets.PERSONAL_TOKEN }}@github.com/senzyo/sing-box-templates.git
-          git push -uf origin normal:normal
+          git push -uf origin public:public

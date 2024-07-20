@@ -20,45 +20,51 @@
   "dns": {
     "servers": [
       {
-        "tag": "国外DNS",
-        "address": "tls://8.8.8.8",
+        "tag": "国际 DNS",
+        "address": "h3://8.8.8.8/dns-query",
         "detour": "🚀 默认出站"
       },
       {
-        "tag": "国内DNS",
-        "address": "tls://223.5.5.5",
+        "tag": "阿里 DNS",
+        "address": "h3://dns.alidns.com/dns-query",
+        "address_resolver": "ISP DNS",
+        "detour": "🐢 直连"
+      },
+      {
+        "tag": "ISP DNS",
+        "address": "local",
         "detour": "🐢 直连"
       }
     ],
     "rules": [
       {
         "outbound": "any",
-        "server": "国内DNS",
+        "server": "阿里 DNS",
         "rewrite_ttl": 1800
       },
       {
         "rule_set": "geosite_cn",
-        "server": "国内DNS",
+        "server": "阿里 DNS",
         "rewrite_ttl": 1800
       },
       {
         "rule_set": "geosite_cn",
         "invert": true,
-        "server": "国外DNS",
+        "server": "国际 DNS",
         "rewrite_ttl": 1800
       },
       {
         "clash_mode": "direct",
-        "server": "国内DNS",
+        "server": "阿里 DNS",
         "rewrite_ttl": 1800
       },
       {
         "clash_mode": "global",
-        "server": "国外DNS",
+        "server": "国际 DNS",
         "rewrite_ttl": 1800
       }
     ],
-    "final": "国外DNS",
+    "final": "国际 DNS",
     "strategy": "prefer_ipv4",
     "disable_cache": false,
     "disable_expire": false,
