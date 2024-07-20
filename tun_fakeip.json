@@ -25,13 +25,13 @@
         "detour": "🚀 默认出站"
       },
       {
-        "tag": "阿里 DNS",
+        "tag": "中国 DNS",
         "address": "h3://dns.alidns.com/dns-query",
-        "address_resolver": "ISP DNS",
+        "address_resolver": "系统 DNS",
         "detour": "🐢 直连"
       },
       {
-        "tag": "ISP DNS",
+        "tag": "系统 DNS",
         "address": "local",
         "detour": "🐢 直连"
       },
@@ -43,7 +43,7 @@
     "rules": [
       {
         "outbound": "any",
-        "server": "阿里 DNS",
+        "server": "中国 DNS",
         "rewrite_ttl": 1800
       },
       {
@@ -62,7 +62,7 @@
       },
       {
         "rule_set": "geosite_cn",
-        "server": "阿里 DNS",
+        "server": "中国 DNS",
         "rewrite_ttl": 1800
       },
       {
@@ -73,7 +73,7 @@
       },
       {
         "clash_mode": "direct",
-        "server": "阿里 DNS",
+        "server": "中国 DNS",
         "rewrite_ttl": 1800
       },
       {
@@ -433,7 +433,7 @@
       "type": "direct"
     },
     {
-      "tag": "内部DNS",
+      "tag": "内部 DNS",
       "type": "dns"
     },
     {
@@ -457,7 +457,7 @@
             "port": 53
           }
         ],
-        "outbound": "内部DNS"
+        "outbound": "内部 DNS"
       },
       {
         "clash_mode": "direct",

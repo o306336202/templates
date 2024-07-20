@@ -13,6 +13,8 @@
     - [2.1.2 mixed 入站](#212-mixed-入站)
   - [2.2 DNS 协议](#22-dns-协议)
   - [2.3 DNS 服务商](#23-dns-服务商)
+    - [2.3.1 Ali DNS](#231-ali-dns)
+    - [2.3.2 DNSPod](#232-dnspod)
   - [2.4 CDN](#24-cdn)
 - [3 模板推荐](#3-模板推荐)
   - [3.1 Linux 和 Windows](#31-linux-和-windows)
@@ -28,7 +30,7 @@
 
 url_gene="https://a.com"  # 生成配置的后端地址
 url_sub="https://b.com"   # 来自机场的订阅链接
-url_tpl="https://raw.githubusercontent.com/senzyo/sing-box-templates/public/tun/h3/google/mirror.ghproxy.com/config.json"  # 配置所用模板的地址
+url_tpl="https://raw.githubusercontent.com/senzyo/sing-box-templates/public/tun/h3/ali/google/mirror.ghproxy.com/config.json"  # 配置所用模板的地址
 url_dl="$url_gene/config/$url_sub&ua=clashmeta&emoji=1&file=$url_tpl"
 echo $url_dl
 curl -L -o config.json "$url_dl"
@@ -42,269 +44,7 @@ curl -L -o config.json "$url_dl"
 
 ## 2. 分类
 
-文件按照 "入站方式 → DNS 协议 → DNS 服务商 → CDN" 进行层级划分。
-
-<details>
-<summary>目录结构参考</summary>
-
-```
-.
-├── mixed
-│   ├── DoH
-│   │   ├── AdGuard
-│   │   │   ├── fastly.jsdelivr.net
-│   │   │   │   └── config.json
-│   │   │   ├── gcore.jsdelivr.net
-│   │   │   │   └── config.json
-│   │   │   ├── ghproxy.net
-│   │   │   │   └── config.json
-│   │   │   ├── mirror.ghproxy.com
-│   │   │   │   └── config.json
-│   │   │   └── testingcf.jsdelivr.net
-│   │   │       └── config.json
-│   │   ├── Cloudflare
-│   │   │   ├── fastly.jsdelivr.net
-│   │   │   │   └── config.json
-│   │   │   ├── gcore.jsdelivr.net
-│   │   │   │   └── config.json
-│   │   │   ├── ghproxy.net
-│   │   │   │   └── config.json
-│   │   │   ├── mirror.ghproxy.com
-│   │   │   │   └── config.json
-│   │   │   └── testingcf.jsdelivr.net
-│   │   │       └── config.json
-│   │   └── Google
-│   │       ├── fastly.jsdelivr.net
-│   │       │   └── config.json
-│   │       ├── gcore.jsdelivr.net
-│   │       │   └── config.json
-│   │       ├── ghproxy.net
-│   │       │   └── config.json
-│   │       ├── mirror.ghproxy.com
-│   │       │   └── config.json
-│   │       └── testingcf.jsdelivr.net
-│   │           └── config.json
-│   ├── DoT
-│   │   ├── AdGuard
-│   │   │   ├── fastly.jsdelivr.net
-│   │   │   │   └── config.json
-│   │   │   ├── gcore.jsdelivr.net
-│   │   │   │   └── config.json
-│   │   │   ├── ghproxy.net
-│   │   │   │   └── config.json
-│   │   │   ├── mirror.ghproxy.com
-│   │   │   │   └── config.json
-│   │   │   └── testingcf.jsdelivr.net
-│   │   │       └── config.json
-│   │   ├── Cloudflare
-│   │   │   ├── fastly.jsdelivr.net
-│   │   │   │   └── config.json
-│   │   │   ├── gcore.jsdelivr.net
-│   │   │   │   └── config.json
-│   │   │   ├── ghproxy.net
-│   │   │   │   └── config.json
-│   │   │   ├── mirror.ghproxy.com
-│   │   │   │   └── config.json
-│   │   │   └── testingcf.jsdelivr.net
-│   │   │       └── config.json
-│   │   └── Google
-│   │       ├── fastly.jsdelivr.net
-│   │       │   └── config.json
-│   │       ├── gcore.jsdelivr.net
-│   │       │   └── config.json
-│   │       ├── ghproxy.net
-│   │       │   └── config.json
-│   │       ├── mirror.ghproxy.com
-│   │       │   └── config.json
-│   │       └── testingcf.jsdelivr.net
-│   │           └── config.json
-│   └── H3
-│       ├── AdGuard
-│       │   ├── fastly.jsdelivr.net
-│       │   │   └── config.json
-│       │   ├── gcore.jsdelivr.net
-│       │   │   └── config.json
-│       │   ├── ghproxy.net
-│       │   │   └── config.json
-│       │   ├── mirror.ghproxy.com
-│       │   │   └── config.json
-│       │   └── testingcf.jsdelivr.net
-│       │       └── config.json
-│       ├── Cloudflare
-│       │   ├── fastly.jsdelivr.net
-│       │   │   └── config.json
-│       │   ├── gcore.jsdelivr.net
-│       │   │   └── config.json
-│       │   ├── ghproxy.net
-│       │   │   └── config.json
-│       │   ├── mirror.ghproxy.com
-│       │   │   └── config.json
-│       │   └── testingcf.jsdelivr.net
-│       │       └── config.json
-│       └── Google
-│           ├── fastly.jsdelivr.net
-│           │   └── config.json
-│           ├── gcore.jsdelivr.net
-│           │   └── config.json
-│           ├── ghproxy.net
-│           │   └── config.json
-│           ├── mirror.ghproxy.com
-│           │   └── config.json
-│           └── testingcf.jsdelivr.net
-│               └── config.json
-└── tun
-    ├── DoH
-    │   ├── AdGuard
-    │   │   ├── fastly.jsdelivr.net
-    │   │   │   ├── config_fakeip.json
-    │   │   │   └── config.json
-    │   │   ├── gcore.jsdelivr.net
-    │   │   │   ├── config_fakeip.json
-    │   │   │   └── config.json
-    │   │   ├── ghproxy.net
-    │   │   │   ├── config_fakeip.json
-    │   │   │   └── config.json
-    │   │   ├── mirror.ghproxy.com
-    │   │   │   ├── config_fakeip.json
-    │   │   │   └── config.json
-    │   │   └── testingcf.jsdelivr.net
-    │   │       ├── config_fakeip.json
-    │   │       └── config.json
-    │   ├── Cloudflare
-    │   │   ├── fastly.jsdelivr.net
-    │   │   │   ├── config_fakeip.json
-    │   │   │   └── config.json
-    │   │   ├── gcore.jsdelivr.net
-    │   │   │   ├── config_fakeip.json
-    │   │   │   └── config.json
-    │   │   ├── ghproxy.net
-    │   │   │   ├── config_fakeip.json
-    │   │   │   └── config.json
-    │   │   ├── mirror.ghproxy.com
-    │   │   │   ├── config_fakeip.json
-    │   │   │   └── config.json
-    │   │   └── testingcf.jsdelivr.net
-    │   │       ├── config_fakeip.json
-    │   │       └── config.json
-    │   └── Google
-    │       ├── fastly.jsdelivr.net
-    │       │   ├── config_fakeip.json
-    │       │   └── config.json
-    │       ├── gcore.jsdelivr.net
-    │       │   ├── config_fakeip.json
-    │       │   └── config.json
-    │       ├── ghproxy.net
-    │       │   ├── config_fakeip.json
-    │       │   └── config.json
-    │       ├── mirror.ghproxy.com
-    │       │   ├── config_fakeip.json
-    │       │   └── config.json
-    │       └── testingcf.jsdelivr.net
-    │           ├── config_fakeip.json
-    │           └── config.json
-    ├── DoT
-    │   ├── AdGuard
-    │   │   ├── fastly.jsdelivr.net
-    │   │   │   ├── config_fakeip.json
-    │   │   │   └── config.json
-    │   │   ├── gcore.jsdelivr.net
-    │   │   │   ├── config_fakeip.json
-    │   │   │   └── config.json
-    │   │   ├── ghproxy.net
-    │   │   │   ├── config_fakeip.json
-    │   │   │   └── config.json
-    │   │   ├── mirror.ghproxy.com
-    │   │   │   ├── config_fakeip.json
-    │   │   │   └── config.json
-    │   │   └── testingcf.jsdelivr.net
-    │   │       ├── config_fakeip.json
-    │   │       └── config.json
-    │   ├── Cloudflare
-    │   │   ├── fastly.jsdelivr.net
-    │   │   │   ├── config_fakeip.json
-    │   │   │   └── config.json
-    │   │   ├── gcore.jsdelivr.net
-    │   │   │   ├── config_fakeip.json
-    │   │   │   └── config.json
-    │   │   ├── ghproxy.net
-    │   │   │   ├── config_fakeip.json
-    │   │   │   └── config.json
-    │   │   ├── mirror.ghproxy.com
-    │   │   │   ├── config_fakeip.json
-    │   │   │   └── config.json
-    │   │   └── testingcf.jsdelivr.net
-    │   │       ├── config_fakeip.json
-    │   │       └── config.json
-    │   └── Google
-    │       ├── fastly.jsdelivr.net
-    │       │   ├── config_fakeip.json
-    │       │   └── config.json
-    │       ├── gcore.jsdelivr.net
-    │       │   ├── config_fakeip.json
-    │       │   └── config.json
-    │       ├── ghproxy.net
-    │       │   ├── config_fakeip.json
-    │       │   └── config.json
-    │       ├── mirror.ghproxy.com
-    │       │   ├── config_fakeip.json
-    │       │   └── config.json
-    │       └── testingcf.jsdelivr.net
-    │           ├── config_fakeip.json
-    │           └── config.json
-    └── H3
-        ├── AdGuard
-        │   ├── fastly.jsdelivr.net
-        │   │   ├── config_fakeip.json
-        │   │   └── config.json
-        │   ├── gcore.jsdelivr.net
-        │   │   ├── config_fakeip.json
-        │   │   └── config.json
-        │   ├── ghproxy.net
-        │   │   ├── config_fakeip.json
-        │   │   └── config.json
-        │   ├── mirror.ghproxy.com
-        │   │   ├── config_fakeip.json
-        │   │   └── config.json
-        │   └── testingcf.jsdelivr.net
-        │       ├── config_fakeip.json
-        │       └── config.json
-        ├── Cloudflare
-        │   ├── fastly.jsdelivr.net
-        │   │   ├── config_fakeip.json
-        │   │   └── config.json
-        │   ├── gcore.jsdelivr.net
-        │   │   ├── config_fakeip.json
-        │   │   └── config.json
-        │   ├── ghproxy.net
-        │   │   ├── config_fakeip.json
-        │   │   └── config.json
-        │   ├── mirror.ghproxy.com
-        │   │   ├── config_fakeip.json
-        │   │   └── config.json
-        │   └── testingcf.jsdelivr.net
-        │       ├── config_fakeip.json
-        │       └── config.json
-        └── Google
-            ├── fastly.jsdelivr.net
-            │   ├── config_fakeip.json
-            │   └── config.json
-            ├── gcore.jsdelivr.net
-            │   ├── config_fakeip.json
-            │   └── config.json
-            ├── ghproxy.net
-            │   ├── config_fakeip.json
-            │   └── config.json
-            ├── mirror.ghproxy.com
-            │   ├── config_fakeip.json
-            │   └── config.json
-            └── testingcf.jsdelivr.net
-                ├── config_fakeip.json
-                └── config.json
-
-117 directories, 135 files
-```
-
-</details>
+文件的存储路径按照 "入站方式 → DNS 协议 → 中国 DNS 服务商 → 国际 DNS 服务商 → CDN" 进行层级划分。
 
 ### 2.1 入站方式
 
@@ -358,17 +98,25 @@ curl -L -o config.json "$url_dl"
 
 ### 2.2 DNS 协议
 
-DNS 协议使用 `DNS over HTTPS` 或 `DNS over HTTP3` 或 `DNS over TLS`, 更多 DNS 协议与格式参考 [sing-box](https://sing-box.sagernet.org/zh/configuration/dns/server/#address) 文档。
+DNS 协议使用 `DNS over HTTPS` 或 `DNS over TLS` 或 `DNS over HTTP3`, 更多 DNS 协议与格式参考 [sing-box](https://sing-box.sagernet.org/zh/configuration/dns/server/#address) 文档。
 
 ### 2.3 DNS 服务商
 
-所有模板的国内 DNS 都使用 `阿里 DNS`, `国际 DNS` 使用 `AdGuard DNS`, `Cloudflare DNS`, `Google DNS` 中的一个。
+`中国 DNS` 包括 `Ali DNS` 和 `DNSPod`。
+
+`国际 DNS` 包括 `AdGuard DNS`, `Cloudflare DNS` 和 `Google DNS`。
 
 更多 DNS 服务商 [参考](https://senzyo.net/2022-22/)。
 
-对于阿里 DNS, 2024 年 9 月 30 日 24 时起, [公共 DNS 免费版接入限速](https://help.aliyun.com/zh/dns/public-dns-free-version-access-speed-limit-notification), 升级到公共 DNS [付费版](https://help.aliyun.com/zh/dns/pricing-overview) 后, 每月有 1000 万次的免费解析额度, 足够个人使用, 只要不超出免费额度就不会产生费用。
+#### 2.3.1 Ali DNS
 
-然后可修改模板中 `阿里 DNS` 的 `address` 为自己的 DNS 地址。
+根据 [公共 DNS 免费版接入限速](https://help.aliyun.com/zh/dns/public-dns-free-version-access-speed-limit-notification), **单 IP 访问量** 超过 **20 QPS**, **UDP/TCP** 流量超过 **2000 bps** 将被限速。
+升级到公共 DNS [付费版](https://help.aliyun.com/zh/dns/pricing-overview), 每月有 **1000 万次** 的免费解析额度。
+
+#### 2.3.2 DNSPod
+
+根据 [DoH 与 DoT 说明](https://docs.dnspod.cn/public-dns/dot-doh/), **单个域名解析调用频率** 限制为 **20 QPS**。
+开通腾讯云 Public DNS [专业版](https://docs.dnspod.cn/public-dns/pricing-description/), 每月有 **300 万次** 的免费解析额度。
 
 ```json
 "dns": {
@@ -379,14 +127,14 @@ DNS 协议使用 `DNS over HTTPS` 或 `DNS over HTTP3` 或 `DNS over TLS`, 更�
       "detour": "🚀 默认出站"
     },
     {
-      "tag": "阿里 DNS",
+      "tag": "中国 DNS",
       "address": "h3://dns.alidns.com/dns-query",
-      // "address": "h3://12345.alidns.com/dns-query",
-      "address_resolver": "ISP DNS",
+      // 可修改 address 为自己的专属地址
+      "address_resolver": "系统 DNS",
       "detour": "🐢 直连"
     },
     {
-      "tag": "ISP DNS",
+      "tag": "系统 DNS",
       "address": "local",
       "detour": "🐢 直连"
     }
@@ -395,13 +143,6 @@ DNS 协议使用 `DNS over HTTPS` 或 `DNS over HTTP3` 或 `DNS over TLS`, 更�
 ...
 },
 ```
-
-<details>
-<summary>或者用 DNSPod</summary>
-
-开通腾讯云 Public DNS [专业版](https://docs.dnspod.cn/public-dns/pricing-description/), 每月有 300 万次的免费解析额度。
-
-</details>
 
 ### 2.4 CDN
 
@@ -462,19 +203,19 @@ https://testingcf.jsdelivr.net/gh/senzyo/sing-box-rules@master/download-process.
 推荐使用入站方式为 `tun` 的模板:
 
 ```
-https://raw.githubusercontent.com/senzyo/sing-box-templates/public/tun/h3/google/mirror.ghproxy.com/config.json
+https://raw.githubusercontent.com/senzyo/sing-box-templates/public/tun/h3/ali/google/mirror.ghproxy.com/config.json
 ```
 
 如果要使用 [FakeIP](https://sing-box.sagernet.org/zh/configuration/dns/fakeip/), 选择:
 
 ```
-https://raw.githubusercontent.com/senzyo/sing-box-templates/public/tun/h3/google/mirror.ghproxy.com/config_fakeip.json
+https://raw.githubusercontent.com/senzyo/sing-box-templates/public/tun/h3/ali/google/mirror.ghproxy.com/config_fakeip.json
 ```
 
 或者使用入站方式为 `mixed` 的模板:
 
 ```
-https://raw.githubusercontent.com/senzyo/sing-box-templates/public/mixed/h3/google/mirror.ghproxy.com/config.json
+https://raw.githubusercontent.com/senzyo/sing-box-templates/public/mixed/h3/ali/google/mirror.ghproxy.com/config.json
 ```
 
 ### 3.2 Android 和 Apple
@@ -482,13 +223,13 @@ https://raw.githubusercontent.com/senzyo/sing-box-templates/public/mixed/h3/goog
 只推荐使用入站方式为 `tun` 的模板:
 
 ```
-https://raw.githubusercontent.com/senzyo/sing-box-templates/public/tun/h3/google/mirror.ghproxy.com/config.json
+https://raw.githubusercontent.com/senzyo/sing-box-templates/public/tun/h3/ali/google/mirror.ghproxy.com/config.json
 ```
 
 如果要使用 [FakeIP](https://sing-box.sagernet.org/zh/configuration/dns/fakeip/), 选择:
 
 ```
-https://raw.githubusercontent.com/senzyo/sing-box-templates/public/tun/h3/google/mirror.ghproxy.com/config_fakeip.json
+https://raw.githubusercontent.com/senzyo/sing-box-templates/public/tun/h3/ali/google/mirror.ghproxy.com/config_fakeip.json
 ```
 
 ## 4. 注意事项
