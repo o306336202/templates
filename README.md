@@ -123,7 +123,8 @@ DNS 协议使用 `DNS over HTTPS` 或 `DNS over TLS` 或 `DNS over HTTP3`, 更�
   "servers": [
     {
       "tag": "国际 DNS",
-      "address": "h3://8.8.8.8/dns-query",
+      "address": "h3://dns.google/dns-query",
+      "address_resolver": "中国 DNS",
       "detour": "🚀 默认出站"
     },
     {
