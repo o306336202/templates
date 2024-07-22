@@ -14,7 +14,8 @@
       "default_mode": "rule"
     },
     "cache_file": {
-      "enabled": true
+      "enabled": true,
+      "store_fakeip": true
     }
   },
   "dns": {
