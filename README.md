@@ -10,7 +10,7 @@
 - [2 模板推荐](#2-模板推荐)
   - [2.1 Linux 和 Windows](#21-linux-和-windows)
   - [2.2 Android 和 Apple](#22-android-和-apple)
-- [3. 分类](#3-分类)
+- [3. 模板分类](#3-模板分类)
   - [3.1 入站方式](#31-入站方式)
     - [3.1.1 tun 入站](#311-tun-入站)
     - [3.1.2 mixed 入站](#312-mixed-入站)
@@ -78,9 +78,24 @@ https://raw.githubusercontent.com/senzyo/sing-box-templates/public/tun/h3/ali/go
 https://raw.githubusercontent.com/senzyo/sing-box-templates/public/tun/h3/ali/google/mirror.ghproxy.com/config_fakeip.json
 ```
 
-## 3. 分类
+## 3. 模板分类
 
-文件的存储路径按照 "入站方式 → DNS 协议 → 中国 DNS 服务商 → 国际 DNS 服务商 → 规则集 CDN" 进行层级划分。
+文件的存储路径按照 "入站方式 → DNS 协议 → 中国 DNS 服务商 → 国际 DNS 服务商 → 规则集 CDN → 配置文件名称" 进行层级划分。
+
+比如对于 `https://raw.githubusercontent.com/senzyo/sing-box-templates/public/tun/h3/ali/google/mirror.ghproxy.com/config.json`, 即: 
+
+```
+https://raw.githubusercontent.com/senzyo/sing-box-templates/<Git 分支名称>/<入站方式>/<DNS 协议>/<中国 DNS 服务商>/<国际 DNS 服务商>/<规则集 CDN>/<配置文件名称>
+```
+
+- `入站方式` 的可选值: `mixed`, `tun`
+- `DNS 协议` 的可选值: `doh`, `dot`, `h3`
+- `中国 DNS 服务商` 的可选值: `ali`, `dnspod`
+- `国际 DNS 服务商` 的可选值: `adguard`, `cloudflare`, `google`, `opendns`
+- `规则集 CDN` 的可选值: `mirror.ghproxy.com`, `ghproxy.net`, `fastly.jsdelivr.net`, `gcore.jsdelivr.net`, `testingcf.jsdelivr.net`
+- `配置文件名称` 的可选值: 
+  - 对于 `入站方式` 为 `mixed` 的, 可选值: `config.json`
+  - 对于 `入站方式` 为 `tun` 的, 可选值: `config.json`, `config_fakeip.json`
 
 ### 3.1 入站方式
 

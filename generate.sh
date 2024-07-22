@@ -49,19 +49,22 @@ declare -A opendns=(
   ["dot"]="tls://dns.opendns.com"
 )
 
-CDN=(
+CDN_Prefix=(
   https://mirror.ghproxy.com/https://raw.githubusercontent.com/senzyo/sing-box-rules/master/
   https://ghproxy.net/https://raw.githubusercontent.com/senzyo/sing-box-rules/master/
   https://fastly.jsdelivr.net/gh/senzyo/sing-box-rules@master/
   https://gcore.jsdelivr.net/gh/senzyo/sing-box-rules@master/
   https://testingcf.jsdelivr.net/gh/senzyo/sing-box-rules@master/
 )
+for cdn_prefix in "${CDN_Prefix[@]}"; do
+  CDN_Server+=($(echo "$cdn_prefix" | awk -F/ '{print $3}'))
+done
 
 Protocol=(doh dot h3)
 DNS_China_Server=(ali dnspod)
 DNS_Global_Server=(adguard cloudflare google opendns)
 
-function generate() {
+function generate {
   path=$output_dir/$protocol/$dns_china_server/$dns_global_server/$cdn_server
   if [ ! -d "$path" ]; then
     mkdir -p $path
@@ -78,8 +81,7 @@ for protocol in "${Protocol[@]}"; do
     for dns_global_server in "${DNS_Global_Server[@]}"; do
       dns_global="${dns_global_server}[$protocol]"
       [[ -z "${!dns_global}" ]] && continue
-      for cdn in "${CDN[@]}"; do
-        cdn_server=$(echo "$cdn" | awk -F/ '{print $3}')
+      for cdn_server in "${CDN_Server[@]}"; do
         generate
       done
     done
