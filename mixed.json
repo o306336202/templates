@@ -44,6 +44,16 @@
         "rewrite_ttl": 3600
       },
       {
+        "clash_mode": "direct",
+        "server": "中国 DNS",
+        "rewrite_ttl": 3600
+      },
+      {
+        "clash_mode": "global",
+        "server": "国际 DNS",
+        "rewrite_ttl": 3600
+      },
+      {
         "rule_set": "geosite_cn",
         "server": "中国 DNS",
         "rewrite_ttl": 3600
@@ -51,16 +61,6 @@
       {
         "rule_set": "geosite_cn",
         "invert": true,
-        "server": "国际 DNS",
-        "rewrite_ttl": 3600
-      },
-      {
-        "clash_mode": "direct",
-        "server": "中国 DNS",
-        "rewrite_ttl": 3600
-      },
-      {
-        "clash_mode": "global",
         "server": "国际 DNS",
         "rewrite_ttl": 3600
       }
