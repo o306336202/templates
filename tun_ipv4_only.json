@@ -57,12 +57,6 @@
         "rule_set": "geosite_cn",
         "server": "中国 DNS",
         "rewrite_ttl": 3600
-      },
-      {
-        "rule_set": "geosite_cn",
-        "invert": true,
-        "server": "国际 DNS",
-        "rewrite_ttl": 3600
       }
     ],
     "final": "国际 DNS",
