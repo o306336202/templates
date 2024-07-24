@@ -54,6 +54,11 @@
         "rewrite_ttl": 3600
       },
       {
+        "rule_set": "geosite_private",
+        "server": "系统 DNS",
+        "rewrite_ttl": 3600
+      },
+      {
         "rule_set": "geosite_cn",
         "server": "中国 DNS",
         "rewrite_ttl": 3600

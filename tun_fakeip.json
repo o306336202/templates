@@ -59,6 +59,11 @@
         "rewrite_ttl": 3600
       },
       {
+        "rule_set": "geosite_private",
+        "server": "系统 DNS",
+        "rewrite_ttl": 3600
+      },
+      {
         "type": "logical",
         "mode": "and",
         "rules": [
