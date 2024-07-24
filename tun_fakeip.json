@@ -23,7 +23,7 @@
       {
         "tag": "国际 DNS",
         "address": "https://dns.google/dns-query",
-        "address_resolver": "中国 DNS",
+        "address_resolver": "系统 DNS",
         "detour": "🚀 默认出站"
       },
       {

@@ -174,7 +174,7 @@ DNS 协议使用 `DNS over HTTPS` 或 `DNS over TLS` 或 `DNS over HTTP/3`, 更�
     {
       "tag": "国际 DNS",
       "address": "https://dns.google/dns-query",
-      "address_resolver": "中国 DNS",
+      "address_resolver": "系统 DNS",
       "detour": "🚀 默认出站"
     },
     {
