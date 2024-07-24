@@ -21,13 +21,13 @@
     "servers": [
       {
         "tag": "国际 DNS",
-        "address": "h3://dns.google/dns-query",
+        "address": "https://dns.google/dns-query",
         "address_resolver": "中国 DNS",
         "detour": "🚀 默认出站"
       },
       {
         "tag": "中国 DNS",
-        "address": "h3://dns.alidns.com/dns-query",
+        "address": "https://dns.alidns.com/dns-query",
         "address_resolver": "系统 DNS",
         "detour": "🐢 直连"
       },
@@ -446,20 +446,20 @@
         "outbound": "内部 DNS"
       },
       {
-        "clash_mode": "direct",
-        "outbound": "🐢 直连"
-      },
-      {
-        "clash_mode": "global",
-        "outbound": "🚀 默认出站"
-      },
-      {
         "rule_set": "geosite_private",
         "outbound": "🐢 直连"
       },
       {
         "ip_is_private": true,
         "outbound": "🐢 直连"
+      },
+      {
+        "clash_mode": "direct",
+        "outbound": "🐢 直连"
+      },
+      {
+        "clash_mode": "global",
+        "outbound": "🚀 默认出站"
       },
       {
         "process_name": ["ssh", "ssh.exe", "ssh-agent.exe"],

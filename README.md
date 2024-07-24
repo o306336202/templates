@@ -31,7 +31,7 @@
 
 url_gene="https://a.com"  # 生成配置的后端地址
 url_sub="https://b.com"   # 来自机场的订阅链接
-url_tpl="https://raw.githubusercontent.com/senzyo/sing-box-templates/public/tun/h3/ali/google/mirror.ghproxy.com/config.json"  # 配置所用模板的地址
+url_tpl="https://raw.githubusercontent.com/senzyo/sing-box-templates/public/tun/doh/ali/google/mirror.ghproxy.com/config.json"  # 配置所用模板的地址
 url_dl="$url_gene/config/$url_sub&ua=clashmeta&emoji=1&file=$url_tpl"
 echo $url_dl
 curl -L -o config.json "$url_dl"
@@ -52,19 +52,19 @@ curl -L -o config.json "$url_dl"
 推荐使用入站方式为 `tun` 的模板:
 
 ```
-https://raw.githubusercontent.com/senzyo/sing-box-templates/public/tun/h3/ali/google/mirror.ghproxy.com/config.json
+https://raw.githubusercontent.com/senzyo/sing-box-templates/public/tun/doh/ali/google/mirror.ghproxy.com/config.json
 ```
 
 如果要使用 [FakeIP](https://sing-box.sagernet.org/zh/configuration/dns/fakeip/), 选择:
 
 ```
-https://raw.githubusercontent.com/senzyo/sing-box-templates/public/tun/h3/ali/google/mirror.ghproxy.com/config_fakeip.json
+https://raw.githubusercontent.com/senzyo/sing-box-templates/public/tun/doh/ali/google/mirror.ghproxy.com/config_fakeip.json
 ```
 
 或者使用入站方式为 `mixed` 的模板:
 
 ```
-https://raw.githubusercontent.com/senzyo/sing-box-templates/public/mixed/h3/ali/google/mirror.ghproxy.com/config.json
+https://raw.githubusercontent.com/senzyo/sing-box-templates/public/mixed/doh/ali/google/mirror.ghproxy.com/config.json
 ```
 
 ### 2.2 Android 和 Apple
@@ -72,24 +72,20 @@ https://raw.githubusercontent.com/senzyo/sing-box-templates/public/mixed/h3/ali/
 只推荐使用入站方式为 `tun` 的模板:
 
 ```
-https://raw.githubusercontent.com/senzyo/sing-box-templates/public/tun/h3/ali/google/mirror.ghproxy.com/config.json
+https://raw.githubusercontent.com/senzyo/sing-box-templates/public/tun/doh/ali/google/mirror.ghproxy.com/config.json
 ```
 
 如果要使用 [FakeIP](https://sing-box.sagernet.org/zh/configuration/dns/fakeip/), 选择:
 
 ```
-https://raw.githubusercontent.com/senzyo/sing-box-templates/public/tun/h3/ali/google/mirror.ghproxy.com/config_fakeip.json
+https://raw.githubusercontent.com/senzyo/sing-box-templates/public/tun/doh/ali/google/mirror.ghproxy.com/config_fakeip.json
 ```
 
 ## 3. 模板分类
 
 文件的存储路径按照 "入站方式 → DNS 协议 → 中国 DNS 服务商 → 国际 DNS 服务商 → 规则集 CDN → 配置文件名称" 进行层级划分。
 
-比如对于 `https://raw.githubusercontent.com/senzyo/sing-box-templates/public/tun/h3/ali/google/mirror.ghproxy.com/config.json`, 即: 
-
-```
-https://raw.githubusercontent.com/senzyo/sing-box-templates/<Git 分支名称>/<入站方式>/<DNS 协议>/<中国 DNS 服务商>/<国际 DNS 服务商>/<规则集 CDN>/<配置文件名称>
-```
+比如对于 `https://raw.githubusercontent.com/senzyo/sing-box-templates/public/tun/doh/ali/google/mirror.ghproxy.com/config.json`, 即 `https://raw.githubusercontent.com/senzyo/sing-box-templates/<Git 分支名称>/<入站方式>/<DNS 协议>/<中国 DNS 服务商>/<国际 DNS 服务商>/<规则集 CDN>/<配置文件名称>`。
 
 - `入站方式` 的可选值: `mixed`, `tun`
 - `DNS 协议` 的可选值: `doh`, `dot`, `h3`
@@ -152,7 +148,7 @@ https://raw.githubusercontent.com/senzyo/sing-box-templates/<Git 分支名称>/<
 
 ### 3.2 DNS 协议
 
-DNS 协议使用 `DNS over HTTPS` 或 `DNS over TLS` 或 `DNS over HTTP3`, 更多 DNS 协议与格式参考 [sing-box](https://sing-box.sagernet.org/zh/configuration/dns/server/#address) 文档。
+DNS 协议使用 `DNS over HTTPS` 或 `DNS over TLS` 或 `DNS over HTTP/3`, 更多 DNS 协议与格式参考 [sing-box](https://sing-box.sagernet.org/zh/configuration/dns/server/#address) 文档。
 
 ### 3.3 DNS 服务商
 
@@ -177,13 +173,13 @@ DNS 协议使用 `DNS over HTTPS` 或 `DNS over TLS` 或 `DNS over HTTP3`, 更�
   "servers": [
     {
       "tag": "国际 DNS",
-      "address": "h3://dns.google/dns-query",
+      "address": "https://dns.google/dns-query",
       "address_resolver": "中国 DNS",
       "detour": "🚀 默认出站"
     },
     {
       "tag": "中国 DNS",
-      "address": "h3://dns.alidns.com/dns-query",
+      "address": "https://dns.alidns.com/dns-query",
       // 可修改 address 为自己的专属地址
       "address_resolver": "系统 DNS",
       "detour": "🐢 直连"
