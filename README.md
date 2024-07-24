@@ -88,7 +88,7 @@ https://raw.githubusercontent.com/senzyo/sing-box-templates/public/tun/doh/ali/g
 比如对于 `https://raw.githubusercontent.com/senzyo/sing-box-templates/public/tun/doh/ali/google/mirror.ghproxy.com/config.json`, 即 `https://raw.githubusercontent.com/senzyo/sing-box-templates/<Git 分支名称>/<入站方式>/<DNS 协议>/<中国 DNS 服务商>/<国际 DNS 服务商>/<规则集 CDN>/<配置文件名称>`。
 
 - `入站方式` 的可选值: `mixed`, `tun`
-- `DNS 协议` 的可选值: `doh`, `dot`, `h3`
+- `DNS 协议` 的可选值: `doh`, `doq`, `dot`, `h3`
 - `中国 DNS 服务商` 的可选值: `ali`, `dnspod`
 - `国际 DNS 服务商` 的可选值: `adguard`, `cloudflare`, `google`, `opendns`
 - `规则集 CDN` 的可选值: `mirror.ghproxy.com`, `ghproxy.net`, `fastly.jsdelivr.net`, `gcore.jsdelivr.net`, `testingcf.jsdelivr.net`
@@ -148,7 +148,7 @@ https://raw.githubusercontent.com/senzyo/sing-box-templates/public/tun/doh/ali/g
 
 ### 3.2 DNS 协议
 
-DNS 协议使用 `DNS over HTTPS` 或 `DNS over TLS` 或 `DNS over HTTP/3`, 更多 DNS 协议与格式参考 [sing-box](https://sing-box.sagernet.org/zh/configuration/dns/server/#address) 文档。
+DNS 协议使用 `DNS over HTTPS` 或 `DNS over QUIC` 或 `DNS over TLS` 或 `DNS over HTTP/3`, 更多 DNS 协议与格式参考 [sing-box](https://sing-box.sagernet.org/zh/configuration/dns/server/#address) 文档。
 
 ### 3.3 DNS 服务商
 

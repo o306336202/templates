@@ -21,6 +21,7 @@ fi
 
 declare -A ali=(
   ["doh"]="https://dns.alidns.com/dns-query"
+  ["doq"]="quic://dns.alidns.com"
   ["dot"]="tls://dns.alidns.com"
   ["h3"]="h3://dns.alidns.com/dns-query"
 )
@@ -31,16 +32,19 @@ declare -A dnspod=(
 
 declare -A adguard=(
   ["doh"]="https://unfiltered.adguard-dns.com/dns-query"
+  ["doq"]="quic://unfiltered.adguard-dns.com"
   ["dot"]="tls://unfiltered.adguard-dns.com"
   ["h3"]="h3://unfiltered.adguard-dns.com/dns-query"
 )
 declare -A cloudflare=(
   ["doh"]="https://cloudflare-dns.com/dns-query"
+  ["doq"]="quic://cloudflare-dns.com"
   ["dot"]="tls://1dot1dot1dot1.cloudflare-dns.com"
   ["h3"]="h3://cloudflare-dns.com/dns-query"
 )
 declare -A google=(
   ["doh"]="https://dns.google/dns-query"
+  ["doq"]="quic://dns.google"
   ["dot"]="tls://dns.google"
   ["h3"]="h3://dns.google/dns-query"
 )
@@ -60,7 +64,7 @@ for cdn_prefix in "${CDN_Prefix[@]}"; do
   CDN_Server+=($(echo "$cdn_prefix" | awk -F/ '{print $3}'))
 done
 
-Protocol=(doh dot h3)
+Protocol=(doh doq dot h3)
 DNS_China_Server=(ali dnspod)
 DNS_Global_Server=(adguard cloudflare google opendns)
 
