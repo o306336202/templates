@@ -58,10 +58,7 @@
         "server": "localDns"
       },
       {
-        "query_type": [
-          "A",
-          "AAAA"
-        ],
+        "query_type": ["A", "AAAA"],
         "rule_set": "geosite-geolocation-!cn",
         "server": "fakeip"
       },
@@ -70,10 +67,7 @@
         "server": "proxyDns"
       },
       {
-        "query_type": [
-          "A",
-          "AAAA"
-        ],
+        "query_type": ["A", "AAAA"],
         "server": "fakeip"
       }
     ],
@@ -87,23 +81,6 @@
     "strategy": "prefer_ipv4"
   },
   "inbounds": [
-    {
-      "type": "tun",
-      "inet4_address": "172.19.0.1/30",
-      "mtu": 9000,
-      "auto_route": true,
-      "strict_route": true,
-      "sniff": true,
-      "endpoint_independent_nat": false,
-      "stack": "system",
-      "platform": {
-        "http_proxy": {
-          "enabled": true,
-          "server": "0.0.0.0",
-          "server_port": 2080
-        }
-      }
-    },
     {
       "type": "mixed",
       "listen": "0.0.0.0",
@@ -220,77 +197,54 @@
     {
       "tag": "🍎 Apple",
       "type": "selector",
-      "outbounds": [
-        "🎯 全球直连",
-        "🇭🇰 香港节点",
-        "🇯🇵 日本节点",
-        "🇺🇲 美国节点"
-      ]
+      "outbounds": ["🎯 全球直连", "🇭🇰 香港节点", "🇯🇵 日本节点", "🇺🇲 美国节点"]
     },
     {
       "tag": "🐸 手动切换",
       "type": "selector",
-      "outbounds": [
-        "{all}"
-      ]
+      "outbounds": ["{all}"]
     },
     {
       "tag": "🇭🇰 香港节点",
       "type": "selector",
-      "outbounds": [
-        "{all}"
-      ],
+      "outbounds": ["{all}"],
       "filter": [
         {
           "action": "include",
-          "keywords": [
-            "🇭🇰|HK|hk|香港|港|HongKong"
-          ]
+          "keywords": ["🇭🇰|HK|hk|香港|港|HongKong"]
         }
       ]
     },
     {
       "tag": "🇯🇵 日本节点",
       "type": "selector",
-      "outbounds": [
-        "{all}"
-      ],
+      "outbounds": ["{all}"],
       "filter": [
         {
           "action": "include",
-          "keywords": [
-            "🇯🇵|JP|jp|日本|日|Japan"
-          ]
+          "keywords": ["🇯🇵|JP|jp|日本|日|Japan"]
         }
       ]
     },
     {
       "tag": "🇺🇲 美国节点",
       "type": "selector",
-      "outbounds": [
-        "{all}"
-      ],
+      "outbounds": ["{all}"],
       "filter": [
         {
           "action": "include",
-          "keywords": [
-            "🇺🇸|US|us|美国|美|United States"
-          ]
+          "keywords": ["🇺🇸|US|us|美国|美|United States"]
         }
       ]
     },
     {
       "tag": "🔯 香港自动",
       "type": "urltest",
-      "outbounds": [
-        "{all}"
-      ],
+      "outbounds": ["{all}"],
       "filter": [
         {
           "action": "include",
-          "keywords": [
-            "🇭🇰|HK|hk|香港|港|HongKong"
-          ]
+          "keywords": ["🇭🇰|HK|hk|香港|港|HongKong"]
         }
       ],
       "url": "http://www.gstatic.com/generate_204",
@@ -300,15 +254,11 @@
     {
       "tag": "♻️ 自动选择",
       "type": "urltest",
-      "outbounds": [
-        "{all}"
-      ],
+      "outbounds": ["{all}"],
       "filter": [
         {
           "action": "exclude",
-          "keywords": [
-            "网站|地址|剩余|过期|时间|有效"
-          ]
+          "keywords": ["网站|地址|剩余|过期|时间|有效"]
         }
       ],
       "url": "http://www.gstatic.com/generate_204",
@@ -395,17 +345,11 @@
         "outbound": "📹 YouTube"
       },
       {
-        "rule_set": [
-          "geoip-google",
-          "geosite-google"
-        ],
+        "rule_set": ["geoip-google", "geosite-google"],
         "outbound": "🍀 Google"
       },
       {
-        "rule_set": [
-          "geoip-telegram",
-          "geosite-telegram"
-        ],
+        "rule_set": ["geoip-telegram", "geosite-telegram"],
         "outbound": "📲 Telegram"
       },
       {
@@ -413,17 +357,11 @@
         "outbound": "🎵 TikTok"
       },
       {
-        "rule_set": [
-          "geoip-netflix",
-          "geosite-netflix"
-        ],
+        "rule_set": ["geoip-netflix", "geosite-netflix"],
         "outbound": "🎥 Netflix"
       },
       {
-        "rule_set": [
-          "geoip-apple",
-          "geosite-apple"
-        ],
+        "rule_set": ["geoip-apple", "geosite-apple"],
         "outbound": "🍎 Apple"
       },
       {
@@ -435,10 +373,7 @@
         "outbound": "🚀 节点选择"
       },
       {
-        "rule_set": [
-          "geoip-cn",
-          "geosite-cn"
-        ],
+        "rule_set": ["geoip-cn", "geosite-cn"],
         "outbound": "🎯 全球直连"
       }
     ],
