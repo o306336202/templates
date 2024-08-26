@@ -1,6 +1,6 @@
 {
   "log": {
-    "level": "info",
+    "level": "error",
     "timestamp": true
   },
   "experimental": {
@@ -201,7 +201,7 @@
     },
     {
       "tag": "🇭🇰 香港节点",
-      "type": "selector",
+      "type": "urltest",
       "outbounds": ["{all}"],
       "filter": [
         {
@@ -212,7 +212,7 @@
     },
     {
       "tag": "🇯🇵 日本节点",
-      "type": "selector",
+      "type": "urltest",
       "outbounds": ["{all}"],
       "filter": [
         {
@@ -223,7 +223,7 @@
     },
     {
       "tag": "🇺🇲 美国节点",
-      "type": "selector",
+      "type": "urltest",
       "outbounds": ["{all}"],
       "filter": [
         {
@@ -244,7 +244,8 @@
       ],
       "url": "http://www.gstatic.com/generate_204",
       "interval": "10m",
-      "tolerance": 50
+      "tolerance": 100,
+      "interrupt_exist_connections": true
     },
     {
       "tag": "♻️ 自动选择",
@@ -258,7 +259,7 @@
       ],
       "url": "http://www.gstatic.com/generate_204",
       "interval": "10m",
-      "tolerance": 50
+      "tolerance": 100
     },
     {
       "tag": "🐟 漏网之鱼",
