@@ -82,7 +82,8 @@
         "♻️ 自动选择",
         "🐸 手动切换",
         "🎯 全球直连"
-      ]
+      ],
+      "interrupt_exist_connections": true
     },
     {
       "tag": "📹 YouTube",
@@ -94,7 +95,8 @@
         "🇺🇲 美国节点",
         "♻️ 自动选择",
         "🐸 手动切换"
-      ]
+      ],
+      "interrupt_exist_connections": true
     },
     {
       "tag": "🤖 OpenAI",
@@ -106,7 +108,8 @@
         "🇺🇲 美国节点",
         "♻️ 自动选择",
         "🐸 手动切换"
-      ]
+      ],
+      "interrupt_exist_connections": true
     },
     {
       "tag": "🍀 Google",
@@ -118,7 +121,8 @@
         "🇺🇲 美国节点",
         "♻️ 自动选择",
         "🐸 手动切换"
-      ]
+      ],
+      "interrupt_exist_connections": true
     },
     {
       "tag": "📲 Telegram",
@@ -130,7 +134,8 @@
         "🇺🇲 美国节点",
         "♻️ 自动选择",
         "🐸 手动切换"
-      ]
+      ],
+      "interrupt_exist_connections": true
     },
     {
       "tag": "🎵 TikTok",
@@ -142,7 +147,8 @@
         "🇺🇲 美国节点",
         "♻️ 自动选择",
         "🐸 手动切换"
-      ]
+      ],
+      "interrupt_exist_connections": true
     },
     {
       "tag": "🎥 Netflix",
@@ -154,7 +160,8 @@
         "🇺🇲 美国节点",
         "♻️ 自动选择",
         "🐸 手动切换"
-      ]
+      ],
+      "interrupt_exist_connections": true
     },
     {
       "tag": "🪟 Microsoft",
@@ -166,7 +173,8 @@
         "🇺🇲 美国节点",
         "♻️ 自动选择",
         "🎯 全球直连"
-      ]
+      ],
+      "interrupt_exist_connections": true
     },
     {
       "tag": "🍎 Apple",
@@ -178,7 +186,8 @@
         "🇺🇲 美国节点",
         "♻️ 自动选择",
         "🐸 手动切换"
-      ]
+      ],
+      "interrupt_exist_connections": true
     },
     {
       "tag": "🇭🇰 香港节点",
@@ -189,7 +198,8 @@
           "action": "include",
           "keywords": ["🇭🇰|HK|hk|香港|港|HongKong"]
         }
-      ]
+      ],
+      "interrupt_exist_connections": true
     },
     {
       "tag": "🇯🇵 日本节点",
@@ -200,7 +210,8 @@
           "action": "include",
           "keywords": ["🇯🇵|JP|jp|日本|日|Japan"]
         }
-      ]
+      ],
+      "interrupt_exist_connections": true
     },
     {
       "tag": "🇺🇲 美国节点",
@@ -211,7 +222,8 @@
           "action": "include",
           "keywords": ["🇺🇸|US|us|美国|美|United States"]
         }
-      ]
+      ],
+      "interrupt_exist_connections": true
     },
     {
       "tag": "♻️ 自动选择",
@@ -225,12 +237,14 @@
       ],
       "url": "http://www.gstatic.com/generate_204",
       "interval": "10m",
-      "tolerance": 100
+      "tolerance": 100,
+      "interrupt_exist_connections": true
     },
     {
       "tag": "🐸 手动切换",
       "type": "selector",
-      "outbounds": ["{all}"]
+      "outbounds": ["{all}"],
+      "interrupt_exist_connections": true
     },
     {
       "tag": "🐟 漏网之鱼",
@@ -242,7 +256,8 @@
         "🇯🇵 日本节点",
         "🇺🇲 美国节点",
         "🐸 手动切换"
-      ]
+      ],
+      "interrupt_exist_connections": true
     },
     {
       "tag": "GLOBAL",
@@ -254,7 +269,8 @@
         "🇯🇵 日本节点",
         "🇺🇲 美国节点",
         "🐸 手动切换"
-      ]
+      ],
+      "interrupt_exist_connections": true
     },
     {
       "tag": "🎯 全球直连",
