@@ -1,4 +1,8 @@
 {
+  "log": {},
+  "experimental": {},
+  "dns": {},
+  "inbounds": [],
   "outbounds": [
     {
       "tag": "🚀 节点选择",
