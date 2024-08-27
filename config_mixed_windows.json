@@ -31,10 +31,6 @@
         "detour": "🎯 全球直连"
       },
       {
-        "tag": "fakeip",
-        "address": "fakeip"
-      },
-      {
         "tag": "block",
         "address": "rcode://success"
       }
@@ -58,17 +54,8 @@
         "server": "localDns"
       },
       {
-        "query_type": ["A", "AAAA"],
-        "rule_set": "geosite-geolocation-!cn",
-        "server": "fakeip"
-      },
-      {
         "rule_set": "geosite-geolocation-!cn",
         "server": "proxyDns"
-      },
-      {
-        "query_type": ["A", "AAAA"],
-        "server": "fakeip"
       }
     ],
     "final": "localDns",
