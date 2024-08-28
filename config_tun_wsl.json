@@ -70,13 +70,6 @@
       "sniff": true,
       "endpoint_independent_nat": false,
       "stack": "system"
-    },
-    {
-      "type": "mixed",
-      "listen": "0.0.0.0",
-      "listen_port": 2080,
-      "sniff": true,
-      "users": []
     }
   ],
   "outbounds": [
