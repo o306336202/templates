@@ -70,21 +70,7 @@
       "strict_route": false,
       "sniff": true,
       "endpoint_independent_nat": false,
-      "stack": "system",
-      "platform": {
-        "http_proxy": {
-          "enabled": true,
-          "server": "0.0.0.0",
-          "server_port": 2090
-        }
-      }
-    },
-    {
-      "type": "mixed",
-      "listen": "0.0.0.0",
-      "listen_port": 2090,
-      "sniff": true,
-      "users": []
+      "stack": "system"
     }
   ],
   "outbounds": [
@@ -279,12 +265,12 @@
       "tag": "GLOBAL",
       "type": "selector",
       "outbounds": [
-        "✈️ 自动切换",
-        "🎯 全球直连",
         "🇭🇰 香港节点",
         "🇯🇵 日本节点",
         "🇺🇲 美国节点",
-        "🚁 手动切换"
+        "✈️ 自动切换",
+        "🚁 手动切换",
+        "🎯 全球直连"
       ],
       "interrupt_exist_connections": true
     },
