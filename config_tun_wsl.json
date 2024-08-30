@@ -206,6 +206,9 @@
           "keywords": ["🇭🇰|HK|hk|香港|港|HongKong"]
         }
       ],
+      "url": "http://www.gstatic.com/generate_204",
+      "interval": "10m",
+      "tolerance": 100,
       "interrupt_exist_connections": true
     },
     {
@@ -218,6 +221,9 @@
           "keywords": ["🇯🇵|JP|jp|日本|日|Japan"]
         }
       ],
+      "url": "http://www.gstatic.com/generate_204",
+      "interval": "10m",
+      "tolerance": 100,
       "interrupt_exist_connections": true
     },
     {
@@ -230,6 +236,9 @@
           "keywords": ["🇺🇸|US|us|美国|美|United States"]
         }
       ],
+      "url": "http://www.gstatic.com/generate_204",
+      "interval": "10m",
+      "tolerance": 100,
       "interrupt_exist_connections": true
     },
     {
