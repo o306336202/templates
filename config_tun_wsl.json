@@ -63,19 +63,17 @@
   },
   "inbounds": [
     {
+      "tag": "tun",
       "type": "tun",
       "inet4_address": "172.19.0.1/30",
       "auto_route": true,
-      "sniff": true,
-      "endpoint_independent_nat": false,
-      "stack": "system"
+      "stack": "mixed"
     },
     {
+      "tag": "mixed",
       "type": "mixed",
       "listen": "0.0.0.0",
-      "listen_port": 2080,
-      "sniff": true,
-      "users": []
+      "listen_port": 2080
     }
   ],
   "outbounds": [
