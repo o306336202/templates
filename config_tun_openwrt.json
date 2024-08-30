@@ -1,8 +1,76 @@
 {
-  "log": {},
-  "experimental": {},
-  "dns": {},
-  "inbounds": [],
+  "log": {
+    "level": "error",
+    "timestamp": true
+  },
+  "experimental": {
+    "cache_file": {
+      "enabled": true
+    },
+    "clash_api": {
+      "external_controller": "192.168.2.1:9090",
+      "external_ui": "ui",
+      "secret": "p202004",
+      "external_ui_download_url": "https://ghproxy.net/https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip",
+      "external_ui_download_detour": "🎯 全球直连",
+      "default_mode": "rule"
+    }
+  },
+  "dns": {
+    "servers": [
+      {
+        "tag": "proxyDns",
+        "address": "tls://8.8.8.8",
+        "address_resolver": "localDns",
+        "address_strategy": "ipv4_only",
+        "detour": "🚀 节点选择"
+      },
+      {
+        "tag": "localDns",
+        "address": "223.5.5.5",
+        "detour": "🎯 全球直连"
+      },
+      {
+        "tag": "block",
+        "address": "rcode://success"
+      }
+    ],
+    "rules": [
+      {
+        "outbound": "any",
+        "server": "localDns",
+        "disable_cache": true
+      },
+      {
+        "rule_set": "geosite-cn",
+        "server": "localDns"
+      },
+      {
+        "clash_mode": "direct",
+        "server": "localDns"
+      },
+      {
+        "clash_mode": "global",
+        "server": "proxyDns"
+      },
+      {
+        "rule_set": "geosite-geolocation-!cn",
+        "server": "proxyDns"
+      }
+    ],
+    "final": "localDns",
+    "strategy": "ipv4_only"
+  },
+  "inbounds": [
+    {
+      "tag": "tun",
+      "type": "tun",
+      "inet4_address": "172.19.0.1/30",
+      "auto_route": true,
+      "strict_route": true,
+      "stack": "mixed"
+    }
+  ],
   "outbounds": [
     {
       "tag": "🚀 节点选择",
