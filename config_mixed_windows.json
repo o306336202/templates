@@ -59,7 +59,7 @@
         "server": "google"
       },
       {
-        "rule_set": "cnsite",
+        "rule_set": "geosite-cn",
         "server": "default-dns"
       }
     ],
