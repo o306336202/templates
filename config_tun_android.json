@@ -77,12 +77,6 @@
       "auto_route": true,
       "strict_route": true,
       "stack": "mixed"
-    },
-    {
-      "tag": "mixed",
-      "type": "mixed",
-      "listen": "172.21.208.154",
-      "listen_port": 2080
     }
   ],
   "outbounds": [
