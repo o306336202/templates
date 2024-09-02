@@ -8,7 +8,7 @@
       "enabled": true
     },
     "clash_api": {
-      "external_controller": "172.21.208.154:9090",
+      "external_controller": "127.0.0.1:9090",
       "external_ui": "ui",
       "secret": "",
       "external_ui_download_url": "https://ghproxy.net/https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip",
