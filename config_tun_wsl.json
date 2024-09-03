@@ -44,23 +44,28 @@
     "rules": [
       {
         "outbound": "any",
-        "server": "default-dns"
+        "server": "default-dns",
+        "rewrite_ttl": 3600
       },
       {
         "query_type": "HTTPS",
-        "server": "block-dns"
+        "server": "block-dns",
+        "rewrite_ttl": 3600
       },
       {
         "clash_mode": "direct",
-        "server": "default-dns"
+        "server": "default-dns",
+        "rewrite_ttl": 3600
       },
       {
         "clash_mode": "global",
-        "server": "google"
+        "server": "google",
+        "rewrite_ttl": 3600
       },
       {
         "rule_set": "geosite-cn",
-        "server": "default-dns"
+        "server": "default-dns",
+        "rewrite_ttl": 3600
       }
     ],
     "strategy": "ipv4_only",
