@@ -76,13 +76,13 @@
       "inet4_address": "172.19.0.1/30",
       "auto_route": true,
       "strict_route": true,
-      "stack": "mixed"
+      "stack": "system"
     },
     {
       "tag": "mixed",
       "type": "mixed",
       "listen": "172.21.208.154",
-      "listen_port": 2080
+      "listen_port": 7890
     }
   ],
   "outbounds": [
