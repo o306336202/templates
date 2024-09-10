@@ -196,7 +196,7 @@
       ],
       "url": "http://www.gstatic.com/generate_204",
       "interval": "10m",
-      "tolerance": 100
+      "tolerance": 50
     },
     {
       "tag": "🇯🇵 日本节点",
@@ -210,7 +210,7 @@
       ],
       "url": "http://www.gstatic.com/generate_204",
       "interval": "10m",
-      "tolerance": 100
+      "tolerance": 50
     },
     {
       "tag": "🇺🇲 美国节点",
@@ -224,7 +224,7 @@
       ],
       "url": "http://www.gstatic.com/generate_204",
       "interval": "10m",
-      "tolerance": 100
+      "tolerance": 50
     },
     {
       "tag": "✈️ 自动切换",
@@ -238,7 +238,7 @@
       ],
       "url": "http://www.gstatic.com/generate_204",
       "interval": "10m",
-      "tolerance": 100
+      "tolerance": 50
     },
     {
       "tag": "GLOBAL",
