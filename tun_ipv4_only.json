@@ -517,6 +517,18 @@
         "outbound": "🚀 默认出站"
       },
       {
+        "rule_set": "geosite_gfw",
+        "outbound": "🚀 默认出站"
+      },
+      {
+        "rule_set": "geosite_github",
+        "outbound": "🚀 默认出站"
+      },
+      {
+        "rule_set": "geosite_youtube",
+        "outbound": "🚀 默认出站"
+      },
+      {
         "rule_set": "geosite_cn",
         "outbound": "🐢 直连"
       },
@@ -651,6 +663,22 @@
         "type": "remote",
         "format": "binary",
         "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/senzyo/sing-box-rules/master/geosite/github.srs",
+        "download_detour": "🐢 直连",
+        "update_interval": "1d"
+      },
+      {
+        "tag": "geosite_youtube",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/senzyo/sing-box-rules/master/geosite/youtube.srs",
+        "download_detour": "🐢 直连",
+        "update_interval": "1d"
+      },
+      {
+        "tag": "geosite_gfw",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/senzyo/sing-box-rules/master/geosite/gfw.srs",
         "download_detour": "🐢 直连",
         "update_interval": "1d"
       },
