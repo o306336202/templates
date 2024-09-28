@@ -552,6 +552,18 @@
         "outbound": "🚀 默认出站"
       },
       {
+        "rule_set": "geosite_gfw",
+        "outbound": "🚀 默认出站"
+      },
+      {
+        "rule_set": "geosite_github",
+        "outbound": "🚀 默认出站"
+      },
+      {
+        "rule_set": "geosite_youtube",
+        "outbound": "🚀 默认出站"
+      },
+      {
         "rule_set": "geosite_cn",
         "outbound": "🐢 直连"
       },
@@ -686,6 +698,22 @@
         "type": "remote",
         "format": "binary",
         "url": "https://gcore.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/github.srs",
+        "download_detour": "🐢 直连",
+        "update_interval": "1d"
+      },
+      {
+        "tag": "geosite_youtube",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://gcore.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/youtube.srs",
+        "download_detour": "🐢 直连",
+        "update_interval": "1d"
+      },
+      {
+        "tag": "geosite_gfw",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://gcore.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/gfw.srs",
         "download_detour": "🐢 直连",
         "update_interval": "1d"
       },
