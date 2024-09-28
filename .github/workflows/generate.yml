@@ -20,14 +20,11 @@ jobs:
           git clone --branch master https://github.com/o306336202/templates.git master
           cd master
           chmod +x generate.sh
-          ./generate.sh mixed.json ../public/mixed
-          ./generate.sh tun_fakeip.json ../public/tun
-          ./generate.sh tun_ipv4_only.json ../public/tun
+          ./generate.sh mixed.json config/mixed
+          ./generate.sh tun_fakeip.json config/tun
+          ./generate.sh tun_ipv4_only.json config/tun
       - name: Public Templates
         run: |
-          cd public
-          git init
-          git add -A mixed tun
-          git commit -m "Generate"
-          git remote add origin https://${{ secrets.PERSONAL_TOKEN }}@github.com/senzyo/sing-box-templates.git
-          git push -uf origin public:public
+          git add -A config
+          git commit -m "Auto generate."
+          git push -uf origin master
