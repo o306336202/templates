@@ -682,6 +682,14 @@
         "update_interval": "3d"
       },
       {
+        "tag": "geosite_github",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://ghp.ci/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/github.srs",
+        "download_detour": "🐢 直连",
+        "update_interval": "1d"
+      },
+      {
         "tag": "geosite_cn",
         "type": "remote",
         "format": "binary",
