@@ -25,6 +25,7 @@ jobs:
           ./generate.sh tun_ipv4_only.json config/tun
       - name: Public Templates
         run: |
+          cd master
           git add -A config
           git commit -m "Auto generate."
           git push -uf origin master
