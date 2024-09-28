@@ -28,4 +28,5 @@ jobs:
           cd master
           git add -A config
           git commit -m "Auto generate."
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY
           git push
