@@ -1,14 +1,15 @@
 {
   "log": {
     "disabled": false,
-    "level": "error",
+    "level": "trace",
+    "output": "sing-box.log",
     "timestamp": true
   },
   "experimental": {
     "clash_api": {
-      "external_controller": "127.0.0.1:9090",
+      "external_controller": "0.0.0.0:9090",
       "external_ui": "ui",
-      "external_ui_download_url": "https://mirror.ghproxy.com/https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip",
+      "external_ui_download_url": "https://ghp.ci/https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip",
       "external_ui_download_detour": "🐢 直连",
       "secret": "",
       "default_mode": "rule"
@@ -83,12 +84,9 @@
       ],
       "gso": false,
       "auto_route": true,
-      "strict_route": false,
+      "strict_route": true,
       "endpoint_independent_nat": false,
       "stack": "mixed",
-      "exclude_package": [
-        "com.android.captiveportallogin"
-      ],
       "platform": {
         "http_proxy": {
           "enabled": true,
@@ -163,22 +161,6 @@
       "type": "selector",
       "outbounds": [
         "🚫 阻断",
-        "🚀 默认出站",
-        "🐢 直连",
-        "📌 单选节点",
-        "🇭🇰 香港节点",
-        "🇯🇵 日本节点",
-        "🇰🇷 韩国节点",
-        "🇹🇼 台湾节点",
-        "🇸🇬 新加坡节点",
-        "🇺🇸 美国节点"
-      ],
-      "interrupt_exist_connections": true
-    },
-    {
-      "tag": "📥 Downloader",
-      "type": "selector",
-      "outbounds": [
         "🚀 默认出站",
         "🐢 直连",
         "📌 单选节点",
@@ -518,23 +500,6 @@
         "outbound": "🚀 默认出站"
       },
       {
-        "type": "logical",
-        "mode": "and",
-        "rules": [
-          {
-            "rule_set": "downloader"
-          },
-          {
-            "rule_set": [
-              "geoip_cn",
-              "geosite_cn"
-            ],
-            "invert": true
-          }
-        ],
-        "outbound": "📥 Downloader"
-      },
-      {
         "rule_set": "geosite_apple",
         "outbound": "🍎 Apple"
       },
@@ -609,14 +574,6 @@
         "type": "remote",
         "format": "binary",
         "url": "https://ghproxy.net/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/category-ads-all.srs",
-        "download_detour": "🐢 直连",
-        "update_interval": "3d"
-      },
-      {
-        "tag": "downloader",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://ghproxy.net/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/downloader.srs",
         "download_detour": "🐢 直连",
         "update_interval": "3d"
       },
