@@ -14,10 +14,10 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git config --global init.defaultBranch public
+          git config --global init.defaultBranch master
       - name: Generate Templates
         run: |
-          git clone --branch master https://github.com/senzyo/sing-box-templates.git master
+          git clone --branch master https://github.com/o306336202/templates.git master
           cd master
           chmod +x generate.sh
           ./generate.sh mixed.json ../public/mixed
