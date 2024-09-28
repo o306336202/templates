@@ -54,7 +54,7 @@ declare -A opendns=(
 )
 
 CDN_Prefix=(
-  https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/
+  https://ghp.ci/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/
   https://ghproxy.net/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/
   https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/
   https://gcore.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/
