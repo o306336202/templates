@@ -54,11 +54,11 @@ declare -A opendns=(
 )
 
 CDN_Prefix=(
-  https://mirror.ghproxy.com/https://raw.githubusercontent.com/senzyo/sing-box-rules/master/
-  https://ghproxy.net/https://raw.githubusercontent.com/senzyo/sing-box-rules/master/
-  https://fastly.jsdelivr.net/gh/senzyo/sing-box-rules@master/
-  https://gcore.jsdelivr.net/gh/senzyo/sing-box-rules@master/
-  https://testingcf.jsdelivr.net/gh/senzyo/sing-box-rules@master/
+  https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/
+  https://ghproxy.net/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/
+  https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/
+  https://gcore.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/
+  https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/
 )
 for cdn_prefix in "${CDN_Prefix[@]}"; do
   CDN_Server+=($(echo "$cdn_prefix" | awk -F/ '{print $3}'))
@@ -85,7 +85,9 @@ for protocol in "${Protocol[@]}"; do
     for dns_global_server in "${DNS_Global_Server[@]}"; do
       dns_global="${dns_global_server}[$protocol]"
       [[ -z "${!dns_global}" ]] && continue
-      for cdn_server in "${CDN_Server[@]}"; do
+      for cdn_prefix in "${CDN_Prefix[@]}"; do
+        cdn="$cdn_prefix"
+        cdn_server=($(echo "$cdn_prefix" | awk -F/ '{print $3}'))
         generate
       done
     done
