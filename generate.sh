@@ -22,12 +22,12 @@ fi
 declare -A ali=(
   ["doh"]="https://dns.alidns.com/dns-query"
   ["doq"]="quic://dns.alidns.com"
-  ["dot"]="tls://dns.alidns.com"
+  ["dot"]="tls://223.5.5.5"
   ["h3"]="h3://dns.alidns.com/dns-query"
 )
 declare -A dnspod=(
   ["doh"]="https://doh.pub/dns-query"
-  ["dot"]="tls://doh.pub"
+  ["dot"]="tls://1.12.12.12"
 )
 
 declare -A adguard=(
@@ -74,7 +74,7 @@ function generate {
     mkdir -p $path
   fi
   jq --arg dns_china "${!dns_china}" --arg dns_global "${!dns_global}" --arg cdn "$cdn" \
-    '.dns.servers[] |= if .tag=="国际 DNS" then .address = $dns_global elif .tag=="中国 DNS" then .address = $dns_china else . end | .route.rule_set[].url |= sub("https.*?master\/"; $cdn)' $template >$path/$config_name
+    '.dns.servers[] |= if .tag=="国际 DNS" then .address = $dns_global elif .tag=="默认 DNS" then .address = $dns_china else . end | .route.rule_set[].url |= sub("https.*?master\/"; $cdn)' $template >$path/$config_name
   echo "$path/$config_name"
 }
 

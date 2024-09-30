@@ -23,11 +23,11 @@
       {
         "tag": "国际 DNS",
         "address": "https://dns.google/dns-query",
-        "address_resolver": "系统 DNS",
+        "address_resolver": "默认 DNS",
         "detour": "🚀 默认出站"
       },
       {
-        "tag": "中国 DNS",
+        "tag": "默认 DNS",
         "address": "https://dns.alidns.com/dns-query",
         "address_resolver": "系统 DNS",
         "detour": "🐢 直连"
@@ -45,12 +45,12 @@
     "rules": [
       {
         "outbound": "any",
-        "server": "中国 DNS",
+        "server": "默认 DNS",
         "rewrite_ttl": 3600
       },
       {
         "clash_mode": "direct",
-        "server": "中国 DNS",
+        "server": "默认 DNS",
         "rewrite_ttl": 3600
       },
       {
@@ -79,7 +79,7 @@
       },
       {
         "rule_set": "geosite_cn",
-        "server": "中国 DNS",
+        "server": "默认 DNS",
         "rewrite_ttl": 3600
       }
     ],

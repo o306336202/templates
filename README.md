@@ -83,13 +83,13 @@ https://raw.githubusercontent.com/senzyo/sing-box-templates/public/tun/doh/ali/g
 
 ## 3. 模板分类
 
-文件的存储路径按照 "入站方式 → DNS 协议 → 中国 DNS 服务商 → 国际 DNS 服务商 → 规则集 CDN → 配置文件名称" 进行层级划分。
+文件的存储路径按照 "入站方式 → DNS 协议 → 默认 DNS 服务商 → 国际 DNS 服务商 → 规则集 CDN → 配置文件名称" 进行层级划分。
 
-比如对于 `https://raw.githubusercontent.com/senzyo/sing-box-templates/public/tun/doh/ali/google/mirror.ghproxy.com/config.json`, 即 `https://raw.githubusercontent.com/senzyo/sing-box-templates/<Git 分支名称>/<入站方式>/<DNS 协议>/<中国 DNS 服务商>/<国际 DNS 服务商>/<规则集 CDN>/<配置文件名称>`。
+比如对于 `https://raw.githubusercontent.com/senzyo/sing-box-templates/public/tun/doh/ali/google/mirror.ghproxy.com/config.json`, 即 `https://raw.githubusercontent.com/senzyo/sing-box-templates/<Git 分支名称>/<入站方式>/<DNS 协议>/<默认 DNS 服务商>/<国际 DNS 服务商>/<规则集 CDN>/<配置文件名称>`。
 
 - `入站方式` 的可选值: `mixed`, `tun`
 - `DNS 协议` 的可选值: `doh`, `doq`, `dot`, `h3`
-- `中国 DNS 服务商` 的可选值: `ali`, `dnspod`
+- `默认 DNS 服务商` 的可选值: `ali`, `dnspod`
 - `国际 DNS 服务商` 的可选值: `adguard`, `cloudflare`, `google`, `opendns`
 - `规则集 CDN` 的可选值: `mirror.ghproxy.com`, `ghproxy.net`, `fastly.jsdelivr.net`, `gcore.jsdelivr.net`, `testingcf.jsdelivr.net`
 - `配置文件名称` 的可选值: 
@@ -152,7 +152,7 @@ DNS 协议使用 `DNS over HTTPS` 或 `DNS over QUIC` 或 `DNS over TLS` 或 `DN
 
 ### 3.3 DNS 服务商
 
-`中国 DNS` 包括 `Ali DNS` 和 `DNSPod`。
+`默认 DNS` 包括 `Ali DNS` 和 `DNSPod`。
 
 `国际 DNS` 包括 `AdGuard DNS`, `Cisco OpenDNS`, `Cloudflare DNS` 和 `Google DNS`。
 
@@ -178,7 +178,7 @@ DNS 协议使用 `DNS over HTTPS` 或 `DNS over QUIC` 或 `DNS over TLS` 或 `DN
       "detour": "🚀 默认出站"
     },
     {
-      "tag": "中国 DNS",
+      "tag": "默认 DNS",
       "address": "https://dns.alidns.com/dns-query",
       // 可修改 address 为自己的专属地址
       "address_resolver": "系统 DNS",
