@@ -43,28 +43,35 @@
     "rules": [
       {
         "outbound": "any",
-        "server": "默认 DNS",
-        "rewrite_ttl": 3600
+        "server": "默认 DNS"
       },
       {
         "clash_mode": "direct",
-        "server": "默认 DNS",
-        "rewrite_ttl": 3600
+        "server": "默认 DNS"
       },
       {
         "clash_mode": "global",
-        "server": "国际 DNS",
-        "rewrite_ttl": 3600
+        "server": "国际 DNS"
+      },
+      {
+        "rule_set": "geosite_github",
+        "server": "国际 DNS"
+      },
+      {
+        "rule_set": "geosite_youtube",
+        "server": "国际 DNS"
+      },
+      {
+        "rule_set": "geosite_telegram",
+        "server": "国际 DNS"
       },
       {
         "rule_set": "geosite_private",
-        "server": "系统 DNS",
-        "rewrite_ttl": 3600
+        "server": "系统 DNS"
       },
       {
         "rule_set": "geosite_cn",
-        "server": "默认 DNS",
-        "rewrite_ttl": 3600
+        "server": "默认 DNS"
       }
     ],
     "final": "国际 DNS",
@@ -110,15 +117,129 @@
       "tag": "🚀 默认出站",
       "type": "selector",
       "outbounds": [
-        "🌏 日韩台新",
-        "📌 单选节点",
         "🇭🇰 香港节点",
         "🇯🇵 日本节点",
         "🇰🇷 韩国节点",
         "🇹🇼 台湾节点",
         "🇸🇬 新加坡节点",
-        "🇺🇸 美国节点"
+        "🇺🇸 美国节点",
+        "🌏 日韩台新",
+        "📌 单选节点"
       ],
+      "interrupt_exist_connections": true
+    },
+    {
+      "tag": "🇭🇰 香港节点",
+      "type": "urltest",
+      "outbounds": [
+        "{all}"
+      ],
+      "filter": [
+        {
+          "action": "include",
+          "keywords": [
+            "🇭🇰|香港|HK|Hong Kong"
+          ]
+        }
+      ],
+      "url": "https://www.gstatic.com/generate_204",
+      "interval": "7m",
+      "tolerance": 0,
+      "interrupt_exist_connections": true
+    },
+    {
+      "tag": "🇯🇵 日本节点",
+      "type": "urltest",
+      "outbounds": [
+        "{all}"
+      ],
+      "filter": [
+        {
+          "action": "include",
+          "keywords": [
+            "🇯🇵|日本|JP|Japan"
+          ]
+        }
+      ],
+      "url": "https://www.gstatic.com/generate_204",
+      "interval": "7m",
+      "tolerance": 0,
+      "interrupt_exist_connections": true
+    },
+    {
+      "tag": "🇰🇷 韩国节点",
+      "type": "urltest",
+      "outbounds": [
+        "{all}"
+      ],
+      "filter": [
+        {
+          "action": "include",
+          "keywords": [
+            "🇰🇷|韩国|KR|South Korea"
+          ]
+        }
+      ],
+      "url": "https://www.gstatic.com/generate_204",
+      "interval": "7m",
+      "tolerance": 0,
+      "interrupt_exist_connections": true
+    },
+    {
+      "tag": "🇹🇼 台湾节点",
+      "type": "urltest",
+      "outbounds": [
+        "{all}"
+      ],
+      "filter": [
+        {
+          "action": "include",
+          "keywords": [
+            "🇹🇼|台湾|TW|Taiwan"
+          ]
+        }
+      ],
+      "url": "https://www.gstatic.com/generate_204",
+      "interval": "7m",
+      "tolerance": 0,
+      "interrupt_exist_connections": true
+    },
+    {
+      "tag": "🇸🇬 新加坡节点",
+      "type": "urltest",
+      "outbounds": [
+        "{all}"
+      ],
+      "filter": [
+        {
+          "action": "include",
+          "keywords": [
+            "🇸🇬|新加坡|SG|Singapore"
+          ]
+        }
+      ],
+      "url": "https://www.gstatic.com/generate_204",
+      "interval": "7m",
+      "tolerance": 0,
+      "interrupt_exist_connections": true
+    },
+    {
+      "tag": "🇺🇸 美国节点",
+      "type": "urltest",
+      "outbounds": [
+        "{all}"
+      ],
+      "filter": [
+        {
+          "action": "include",
+          "keywords": [
+            "🇺🇸|美国|US|USA|United States"
+          ]
+        }
+      ],
+      "url": "https://www.gstatic.com/generate_204",
+      "interval": "7m",
+      "tolerance": 0,
       "interrupt_exist_connections": true
     },
     {
@@ -161,15 +282,7 @@
       "type": "selector",
       "outbounds": [
         "🚫 阻断",
-        "🚀 默认出站",
-        "🐢 直连",
-        "📌 单选节点",
-        "🇭🇰 香港节点",
-        "🇯🇵 日本节点",
-        "🇰🇷 韩国节点",
-        "🇹🇼 台湾节点",
-        "🇸🇬 新加坡节点",
-        "🇺🇸 美国节点"
+        "🐢 直连"
       ],
       "interrupt_exist_connections": true
     },
@@ -315,120 +428,6 @@
         "🇸🇬 新加坡节点",
         "🇺🇸 美国节点"
       ],
-      "interrupt_exist_connections": true
-    },
-    {
-      "tag": "🇭🇰 香港节点",
-      "type": "urltest",
-      "outbounds": [
-        "{all}"
-      ],
-      "filter": [
-        {
-          "action": "include",
-          "keywords": [
-            "🇭🇰|香港|HK|Hong Kong"
-          ]
-        }
-      ],
-      "url": "https://www.gstatic.com/generate_204",
-      "interval": "7m",
-      "tolerance": 0,
-      "interrupt_exist_connections": true
-    },
-    {
-      "tag": "🇯🇵 日本节点",
-      "type": "urltest",
-      "outbounds": [
-        "{all}"
-      ],
-      "filter": [
-        {
-          "action": "include",
-          "keywords": [
-            "🇯🇵|日本|JP|Japan"
-          ]
-        }
-      ],
-      "url": "https://www.gstatic.com/generate_204",
-      "interval": "7m",
-      "tolerance": 0,
-      "interrupt_exist_connections": true
-    },
-    {
-      "tag": "🇰🇷 韩国节点",
-      "type": "urltest",
-      "outbounds": [
-        "{all}"
-      ],
-      "filter": [
-        {
-          "action": "include",
-          "keywords": [
-            "🇰🇷|韩国|KR|South Korea"
-          ]
-        }
-      ],
-      "url": "https://www.gstatic.com/generate_204",
-      "interval": "7m",
-      "tolerance": 0,
-      "interrupt_exist_connections": true
-    },
-    {
-      "tag": "🇹🇼 台湾节点",
-      "type": "urltest",
-      "outbounds": [
-        "{all}"
-      ],
-      "filter": [
-        {
-          "action": "include",
-          "keywords": [
-            "🇹🇼|台湾|TW|Taiwan"
-          ]
-        }
-      ],
-      "url": "https://www.gstatic.com/generate_204",
-      "interval": "7m",
-      "tolerance": 0,
-      "interrupt_exist_connections": true
-    },
-    {
-      "tag": "🇸🇬 新加坡节点",
-      "type": "urltest",
-      "outbounds": [
-        "{all}"
-      ],
-      "filter": [
-        {
-          "action": "include",
-          "keywords": [
-            "🇸🇬|新加坡|SG|Singapore"
-          ]
-        }
-      ],
-      "url": "https://www.gstatic.com/generate_204",
-      "interval": "7m",
-      "tolerance": 0,
-      "interrupt_exist_connections": true
-    },
-    {
-      "tag": "🇺🇸 美国节点",
-      "type": "urltest",
-      "outbounds": [
-        "{all}"
-      ],
-      "filter": [
-        {
-          "action": "include",
-          "keywords": [
-            "🇺🇸|美国|US|USA|United States"
-          ]
-        }
-      ],
-      "url": "https://www.gstatic.com/generate_204",
-      "interval": "7m",
-      "tolerance": 0,
       "interrupt_exist_connections": true
     },
     {
