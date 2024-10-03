@@ -123,7 +123,6 @@
         "🇹🇼 台湾节点",
         "🇸🇬 新加坡节点",
         "🇺🇸 美国节点",
-        "🌏 日韩台新",
         "📌 单选节点"
       ],
       "interrupt_exist_connections": true
@@ -239,25 +238,6 @@
       ],
       "url": "https://www.gstatic.com/generate_204",
       "interval": "7m",
-      "tolerance": 0,
-      "interrupt_exist_connections": true
-    },
-    {
-      "tag": "🌏 日韩台新",
-      "type": "urltest",
-      "outbounds": [
-        "{all}"
-      ],
-      "filter": [
-        {
-          "action": "include",
-          "keywords": [
-            "🇯🇵|日本|JP|Japan|🇰🇷|韩国|KR|South Korea|🇹🇼|台湾|TW|Taiwan|🇸🇬|新加坡|SG|Singapore"
-          ]
-        }
-      ],
-      "url": "https://www.gstatic.com/generate_204",
-      "interval": "5m",
       "tolerance": 0,
       "interrupt_exist_connections": true
     },
@@ -445,7 +425,6 @@
   ],
   "route": {
     "auto_detect_interface": true,
-    "override_android_vpn": true,
     "final": "🚀 默认出站",
     "rules": [
       {
