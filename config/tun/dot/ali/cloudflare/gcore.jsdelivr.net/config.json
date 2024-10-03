@@ -30,8 +30,6 @@
       {
         "tag": "默认 DNS",
         "address": "tls://223.5.5.5",
-        "address_resolver": "系统 DNS",
-        "address_strategy": "ipv4_only",
         "detour": "🐢 直连"
       },
       {
@@ -54,6 +52,10 @@
         "server": "国际 DNS"
       },
       {
+        "rule_set": "geosite_google",
+        "server": "国际 DNS"
+      },
+      {
         "rule_set": "geosite_github",
         "server": "国际 DNS"
       },
@@ -68,6 +70,10 @@
       {
         "rule_set": "geosite_private",
         "server": "系统 DNS"
+      },
+      {
+        "rule_set": "geosite_gfw",
+        "server": "国际 DNS"
       },
       {
         "rule_set": "geosite_cn",
