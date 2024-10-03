@@ -68,11 +68,18 @@
         "mode": "and",
         "rules": [
           {
-            "process_name": ["ssh", "ssh.exe", "ssh-agent.exe"],
+            "process_name": [
+              "ssh",
+              "ssh.exe",
+              "ssh-agent.exe"
+            ],
             "invert": true
           },
           {
-            "query_type": ["A", "AAAA"]
+            "query_type": [
+              "A",
+              "AAAA"
+            ]
           }
         ],
         "server": "FakeIP"
@@ -105,7 +112,9 @@
       "strict_route": true,
       "endpoint_independent_nat": false,
       "stack": "mixed",
-      "exclude_package": ["com.android.captiveportallogin"],
+      "exclude_package": [
+        "com.android.captiveportallogin"
+      ],
       "platform": {
         "http_proxy": {
           "enabled": true,
@@ -129,7 +138,7 @@
       "tag": "🚀 默认出站",
       "type": "selector",
       "outbounds": [
-        "🌏 日韩台新",
+        
         "📌 单选节点",
         "🇭🇰 香港节点",
         "🇯🇵 日本节点",
@@ -141,26 +150,11 @@
       "interrupt_exist_connections": true
     },
     {
-      "tag": "🌏 日韩台新",
-      "type": "urltest",
-      "outbounds": ["{all}"],
-      "filter": [
-        {
-          "action": "include",
-          "keywords": [
-            "🇯🇵|日本|JP|Japan|🇰🇷|韩国|KR|South Korea|🇹🇼|台湾|TW|Taiwan|🇸🇬|新加坡|SG|Singapore"
-          ]
-        }
-      ],
-      "url": "https://www.gstatic.com/generate_204",
-      "interval": "5m",
-      "tolerance": 0,
-      "interrupt_exist_connections": true
-    },
-    {
       "tag": "📌 单选节点",
       "type": "selector",
-      "outbounds": ["{all}"],
+      "outbounds": [
+        "{all}"
+      ],
       "filter": [
         {
           "action": "exclude",
@@ -351,11 +345,15 @@
     {
       "tag": "🇭🇰 香港节点",
       "type": "urltest",
-      "outbounds": ["{all}"],
+      "outbounds": [
+        "{all}"
+      ],
       "filter": [
         {
           "action": "include",
-          "keywords": ["🇭🇰|香港|HK|Hong Kong"]
+          "keywords": [
+            "🇭🇰|香港|HK|Hong Kong"
+          ]
         }
       ],
       "url": "https://www.gstatic.com/generate_204",
@@ -366,11 +364,15 @@
     {
       "tag": "🇯🇵 日本节点",
       "type": "urltest",
-      "outbounds": ["{all}"],
+      "outbounds": [
+        "{all}"
+      ],
       "filter": [
         {
           "action": "include",
-          "keywords": ["🇯🇵|日本|JP|Japan"]
+          "keywords": [
+            "🇯🇵|日本|JP|Japan"
+          ]
         }
       ],
       "url": "https://www.gstatic.com/generate_204",
@@ -381,11 +383,15 @@
     {
       "tag": "🇰🇷 韩国节点",
       "type": "urltest",
-      "outbounds": ["{all}"],
+      "outbounds": [
+        "{all}"
+      ],
       "filter": [
         {
           "action": "include",
-          "keywords": ["🇰🇷|韩国|KR|South Korea"]
+          "keywords": [
+            "🇰🇷|韩国|KR|South Korea"
+          ]
         }
       ],
       "url": "https://www.gstatic.com/generate_204",
@@ -396,11 +402,15 @@
     {
       "tag": "🇹🇼 台湾节点",
       "type": "urltest",
-      "outbounds": ["{all}"],
+      "outbounds": [
+        "{all}"
+      ],
       "filter": [
         {
           "action": "include",
-          "keywords": ["🇹🇼|台湾|TW|Taiwan"]
+          "keywords": [
+            "🇹🇼|台湾|TW|Taiwan"
+          ]
         }
       ],
       "url": "https://www.gstatic.com/generate_204",
@@ -411,11 +421,15 @@
     {
       "tag": "🇸🇬 新加坡节点",
       "type": "urltest",
-      "outbounds": ["{all}"],
+      "outbounds": [
+        "{all}"
+      ],
       "filter": [
         {
           "action": "include",
-          "keywords": ["🇸🇬|新加坡|SG|Singapore"]
+          "keywords": [
+            "🇸🇬|新加坡|SG|Singapore"
+          ]
         }
       ],
       "url": "https://www.gstatic.com/generate_204",
@@ -426,11 +440,15 @@
     {
       "tag": "🇺🇸 美国节点",
       "type": "urltest",
-      "outbounds": ["{all}"],
+      "outbounds": [
+        "{all}"
+      ],
       "filter": [
         {
           "action": "include",
-          "keywords": ["🇺🇸|美国|US|USA|United States"]
+          "keywords": [
+            "🇺🇸|美国|US|USA|United States"
+          ]
         }
       ],
       "url": "https://www.gstatic.com/generate_204",
@@ -486,7 +504,11 @@
         "outbound": "🚀 默认出站"
       },
       {
-        "process_name": ["ssh", "ssh.exe", "ssh-agent.exe"],
+        "process_name": [
+          "ssh",
+          "ssh.exe",
+          "ssh-agent.exe"
+        ],
         "outbound": "🖥️ SSH"
       },
       {
@@ -510,7 +532,10 @@
             "rule_set": "downloader"
           },
           {
-            "rule_set": ["geoip_cn", "geosite_cn"],
+            "rule_set": [
+              "geoip_cn",
+              "geosite_cn"
+            ],
             "invert": true
           }
         ],
