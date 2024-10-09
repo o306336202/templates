@@ -41,7 +41,8 @@
     "rules": [
       {
         "outbound": "any",
-        "server": "默认DNS"
+        "server": "默认DNS",
+        "rewrite_ttl": 3600
       },
       {
         "clash_mode": "direct",
