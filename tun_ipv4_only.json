@@ -169,586 +169,585 @@
             "airport1_tag"
           ]
         }
-      }
-    ],
-    "url": "https://www.gstatic.com/generate_204",
-    "interval": "7m",
-    "tolerance": 0,
-    "interrupt_exist_connections": true
-  },
-  {
-    "tag": "🇯🇵日本节点",
-    "type": "urltest",
-    "outbounds": [
-      "{all}"
-    ],
-    "filter": [
-      {
-        "action": "include",
-        "keywords": [
-          "🇯🇵|日本|JP|Japan"
-        ]
-      }
-    ],
-    "url": "https://www.gstatic.com/generate_204",
-    "interval": "7m",
-    "tolerance": 0,
-    "interrupt_exist_connections": true
-  },
-  {
-    "tag": "🇰🇷韩国节点",
-    "type": "urltest",
-    "outbounds": [
-      "{all}"
-    ],
-    "filter": [
-      {
-        "action": "include",
-        "keywords": [
-          "🇰🇷|韩国|KR|SouthKorea"
-        ]
-      }
-    ],
-    "url": "https://www.gstatic.com/generate_204",
-    "interval": "7m",
-    "tolerance": 0,
-    "interrupt_exist_connections": true
-  },
-  {
-    "tag": "🇹🇼台湾节点",
-    "type": "urltest",
-    "outbounds": [
-      "{all}"
-    ],
-    "filter": [
-      {
-        "action": "include",
-        "keywords": [
-          "🇹🇼|台湾|TW|Taiwan"
-        ]
-      }
-    ],
-    "url": "https://www.gstatic.com/generate_204",
-    "interval": "7m",
-    "tolerance": 0,
-    "interrupt_exist_connections": true
-  },
-  {
-    "tag": "🇸🇬新加坡节点",
-    "type": "urltest",
-    "outbounds": [
-      "{all}"
-    ],
-    "filter": [
-      {
-        "action": "include",
-        "keywords": [
-          "🇸🇬|新加坡|SG|Singapore"
-        ]
-      }
-    ],
-    "url": "https://www.gstatic.com/generate_204",
-    "interval": "7m",
-    "tolerance": 0,
-    "interrupt_exist_connections": true
-  },
-  {
-    "tag": "🇺🇸美国节点",
-    "type": "urltest",
-    "outbounds": [
-      "{all}"
-    ],
-    "filter": [
-      {
-        "action": "include",
-        "keywords": [
-          "🇺🇸|美国|US|USA|UnitedStates"
-        ]
-      }
-    ],
-    "url": "https://www.gstatic.com/generate_204",
-    "interval": "7m",
-    "tolerance": 0,
-    "interrupt_exist_connections": true
-  },
-  {
-    "tag": "📌单选节点",
-    "type": "selector",
-    "outbounds": [
-      "{all}"
-    ],
-    "filter": [
-      {
-        "action": "exclude",
-        "keywords": [
-          "剩余|流量|raffic|有效|时间|到期|xpire|地址|网址|官网|自动|最优|最快"
-        ]
-      }
-    ],
-    "interrupt_exist_connections": true
-  },
-  {
-    "tag": "📢广告",
-    "type": "selector",
-    "outbounds": [
-      "🚫阻断",
-      "🐢直连"
-    ],
-    "interrupt_exist_connections": true
-  },
-  {
-    "tag": "🍎Apple",
-    "type": "selector",
-    "outbounds": [
-      "🐢直连",
-      "🚀默认出站",
-      "📌单选节点",
-      "🇭🇰香港节点",
-      "🇯🇵日本节点",
-      "🇰🇷韩国节点",
-      "🇹🇼台湾节点",
-      "🇸🇬新加坡节点",
-      "🇺🇸美国节点"
-    ],
-    "interrupt_exist_connections": true
-  },
-  {
-    "tag": "🎮Game",
-    "type": "selector",
-    "outbounds": [
-      "🚀默认出站",
-      "🐢直连",
-      "📌单选节点",
-      "🇭🇰香港节点",
-      "🇯🇵日本节点",
-      "🇰🇷韩国节点",
-      "🇹🇼台湾节点",
-      "🇸🇬新加坡节点",
-      "🇺🇸美国节点"
-    ],
-    "interrupt_exist_connections": true
-  },
-  {
-    "tag": "🔎Google",
-    "type": "selector",
-    "outbounds": [
-      "🚀默认出站",
-      "🐢直连",
-      "📌单选节点",
-      "🇭🇰香港节点",
-      "🇯🇵日本节点",
-      "🇰🇷韩国节点",
-      "🇹🇼台湾节点",
-      "🇸🇬新加坡节点",
-      "🇺🇸美国节点"
-    ],
-    "interrupt_exist_connections": true
-  },
-  {
-    "tag": "🥽Meta",
-    "type": "selector",
-    "outbounds": [
-      "🚀默认出站",
-      "🐢直连",
-      "📌单选节点",
-      "🇭🇰香港节点",
-      "🇯🇵日本节点",
-      "🇰🇷韩国节点",
-      "🇹🇼台湾节点",
-      "🇸🇬新加坡节点",
-      "🇺🇸美国节点"
-    ],
-    "interrupt_exist_connections": true
-  },
-  {
-    "tag": "☁️OneDrive",
-    "type": "selector",
-    "outbounds": [
-      "🚀默认出站",
-      "🐢直连",
-      "📌单选节点",
-      "🇭🇰香港节点",
-      "🇯🇵日本节点",
-      "🇰🇷韩国节点",
-      "🇹🇼台湾节点",
-      "🇸🇬新加坡节点",
-      "🇺🇸美国节点"
-    ],
-    "interrupt_exist_connections": true
-  },
-  {
-    "tag": "🤖OpenAI",
-    "type": "selector",
-    "outbounds": [
-      "🚀默认出站",
-      "🐢直连",
-      "📌单选节点",
-      "🇭🇰香港节点",
-      "🇯🇵日本节点",
-      "🇰🇷韩国节点",
-      "🇹🇼台湾节点",
-      "🇸🇬新加坡节点",
-      "🇺🇸美国节点"
-    ],
-    "interrupt_exist_connections": true
-  },
-  {
-    "tag": "🪟Microsoft",
-    "type": "selector",
-    "outbounds": [
-      "🚀默认出站",
-      "🐢直连",
-      "📌单选节点",
-      "🇭🇰香港节点",
-      "🇯🇵日本节点",
-      "🇰🇷韩国节点",
-      "🇹🇼台湾节点",
-      "🇸🇬新加坡节点",
-      "🇺🇸美国节点"
-    ],
-    "interrupt_exist_connections": true
-  },
-  {
-    "tag": "✈️Telegram",
-    "type": "selector",
-    "outbounds": [
-      "🚀默认出站",
-      "🐢直连",
-      "📌单选节点",
-      "🇭🇰香港节点",
-      "🇯🇵日本节点",
-      "🇰🇷韩国节点",
-      "🇹🇼台湾节点",
-      "🇸🇬新加坡节点",
-      "🇺🇸美国节点"
-    ],
-    "interrupt_exist_connections": true
-  },
-  {
-    "tag": "🖥️SSH",
-    "type": "selector",
-    "outbounds": [
-      "🚀默认出站",
-      "🐢直连",
-      "📌单选节点",
-      "🇭🇰香港节点",
-      "🇯🇵日本节点",
-      "🇰🇷韩国节点",
-      "🇹🇼台湾节点",
-      "🇸🇬新加坡节点",
-      "🇺🇸美国节点"
-    ],
-    "interrupt_exist_connections": true
-  },
-  {
-    "tag": "🐢直连",
-    "type": "direct"
-  },
-  {
-    "tag": "内部DNS",
-    "type": "dns"
-  },
-  {
-    "tag": "🚫阻断",
-    "type": "block"
-  }
-],
-"route": {
-  "auto_detect_interface": true,
-  "final": "🚀默认出站",
-  "rules": [
+      ],
+      "url": "https://www.gstatic.com/generate_204",
+      "interval": "7m",
+      "tolerance": 0,
+      "interrupt_exist_connections": true
+    },
     {
-      "type": "logical",
-      "mode": "or",
-      "rules": [
+      "tag": "🇯🇵日本节点",
+      "type": "urltest",
+      "outbounds": [
+        "{all}"
+      ],
+      "filter": [
         {
-          "protocol": "dns"
-        },
-        {
-          "port": 53
+          "action": "include",
+          "keywords": [
+            "🇯🇵|日本|JP|Japan"
+          ]
         }
       ],
-      "outbound": "内部DNS"
+      "url": "https://www.gstatic.com/generate_204",
+      "interval": "7m",
+      "tolerance": 0,
+      "interrupt_exist_connections": true
     },
     {
-      "clash_mode": "direct",
-      "outbound": "🐢直连"
-    },
-    {
-      "clash_mode": "global",
-      "outbound": "🚀默认出站"
-    },
-    {
-      "process_name": [
-        "ssh",
-        "ssh.exe",
-        "ssh-agent.exe"
+      "tag": "🇰🇷韩国节点",
+      "type": "urltest",
+      "outbounds": [
+        "{all}"
       ],
-      "outbound": "🖥️SSH"
-    },
-    {
-      "domain_suffix": [
-        "copymanga.site",
-        "mangafuna.xyz",
-        "mangafunb.fun",
-        "senzyo.net"
+      "filter": [
+        {
+          "action": "include",
+          "keywords": [
+            "🇰🇷|韩国|KR|SouthKorea"
+          ]
+        }
       ],
-      "outbound": "🚀默认出站"
+      "url": "https://www.gstatic.com/generate_204",
+      "interval": "7m",
+      "tolerance": 0,
+      "interrupt_exist_connections": true
     },
     {
-      "rule_set": [
-        "geosite_private",
-        "geoip_private"
+      "tag": "🇹🇼台湾节点",
+      "type": "urltest",
+      "outbounds": [
+        "{all}"
       ],
-      "outbound": "🐢直连"
-    },
-    {
-      "rule_set": "geosite_github",
-      "outbound": "🚀默认出站"
-    },
-    {
-      "rule_set": "geosite_youtube",
-      "outbound": "🚀默认出站"
-    },
-    {
-      "rule_set": [
-        "geosite_google",
-        "geoip_google"
+      "filter": [
+        {
+          "action": "include",
+          "keywords": [
+            "🇹🇼|台湾|TW|Taiwan"
+          ]
+        }
       ],
-      "outbound": "🔎Google"
+      "url": "https://www.gstatic.com/generate_204",
+      "interval": "7m",
+      "tolerance": 0,
+      "interrupt_exist_connections": true
     },
     {
-      "rule_set": "geosite_apple",
-      "outbound": "🍎Apple"
-    },
-    {
-      "rule_set": "geosite_category-games@cn",
-      "outbound": "🐢直连"
-    },
-    {
-      "rule_set": "geosite_category-games",
-      "outbound": "🎮Game"
-    },
-    {
-      "rule_set": [
-        "geosite_meta",
-        "geosite_facebook",
-        "geoip_facebook"
+      "tag": "🇸🇬新加坡节点",
+      "type": "urltest",
+      "outbounds": [
+        "{all}"
       ],
-      "outbound": "🥽Meta"
-    },
-    {
-      "rule_set": "geosite_onedrive",
-      "outbound": "☁️OneDrive"
-    },
-    {
-      "rule_set": "geosite_openai",
-      "outbound": "🤖OpenAI"
-    },
-    {
-      "rule_set": "geosite_microsoft",
-      "outbound": "🪟Microsoft"
-    },
-    {
-      "rule_set": [
-        "geosite_telegram",
-        "geoip_telegram"
+      "filter": [
+        {
+          "action": "include",
+          "keywords": [
+            "🇸🇬|新加坡|SG|Singapore"
+          ]
+        }
       ],
-      "outbound": "✈️Telegram"
+      "url": "https://www.gstatic.com/generate_204",
+      "interval": "7m",
+      "tolerance": 0,
+      "interrupt_exist_connections": true
     },
     {
-      "rule_set": [
-        "geosite_cn",
-        "geoip_cn"
+      "tag": "🇺🇸美国节点",
+      "type": "urltest",
+      "outbounds": [
+        "{all}"
       ],
-      "outbound": "🐢直连"
+      "filter": [
+        {
+          "action": "include",
+          "keywords": [
+            "🇺🇸|美国|US|USA|UnitedStates"
+          ]
+        }
+      ],
+      "url": "https://www.gstatic.com/generate_204",
+      "interval": "7m",
+      "tolerance": 0,
+      "interrupt_exist_connections": true
     },
     {
-      "rule_set": "geosite_geolocation-!cn",
-      "outbound": "🚀默认出站"
+      "tag": "📌单选节点",
+      "type": "selector",
+      "outbounds": [
+        "{all}"
+      ],
+      "filter": [
+        {
+          "action": "exclude",
+          "keywords": [
+            "剩余|流量|raffic|有效|时间|到期|xpire|地址|网址|官网|自动|最优|最快"
+          ]
+        }
+      ],
+      "interrupt_exist_connections": true
     },
     {
-      "rule_set": "geosite_gfw",
-      "outbound": "🚀默认出站"
+      "tag": "📢广告",
+      "type": "selector",
+      "outbounds": [
+        "🚫阻断",
+        "🐢直连"
+      ],
+      "interrupt_exist_connections": true
+    },
+    {
+      "tag": "🍎Apple",
+      "type": "selector",
+      "outbounds": [
+        "🐢直连",
+        "🚀默认出站",
+        "📌单选节点",
+        "🇭🇰香港节点",
+        "🇯🇵日本节点",
+        "🇰🇷韩国节点",
+        "🇹🇼台湾节点",
+        "🇸🇬新加坡节点",
+        "🇺🇸美国节点"
+      ],
+      "interrupt_exist_connections": true
+    },
+    {
+      "tag": "🎮Game",
+      "type": "selector",
+      "outbounds": [
+        "🚀默认出站",
+        "🐢直连",
+        "📌单选节点",
+        "🇭🇰香港节点",
+        "🇯🇵日本节点",
+        "🇰🇷韩国节点",
+        "🇹🇼台湾节点",
+        "🇸🇬新加坡节点",
+        "🇺🇸美国节点"
+      ],
+      "interrupt_exist_connections": true
+    },
+    {
+      "tag": "🔎Google",
+      "type": "selector",
+      "outbounds": [
+        "🚀默认出站",
+        "🐢直连",
+        "📌单选节点",
+        "🇭🇰香港节点",
+        "🇯🇵日本节点",
+        "🇰🇷韩国节点",
+        "🇹🇼台湾节点",
+        "🇸🇬新加坡节点",
+        "🇺🇸美国节点"
+      ],
+      "interrupt_exist_connections": true
+    },
+    {
+      "tag": "🥽Meta",
+      "type": "selector",
+      "outbounds": [
+        "🚀默认出站",
+        "🐢直连",
+        "📌单选节点",
+        "🇭🇰香港节点",
+        "🇯🇵日本节点",
+        "🇰🇷韩国节点",
+        "🇹🇼台湾节点",
+        "🇸🇬新加坡节点",
+        "🇺🇸美国节点"
+      ],
+      "interrupt_exist_connections": true
+    },
+    {
+      "tag": "☁️OneDrive",
+      "type": "selector",
+      "outbounds": [
+        "🚀默认出站",
+        "🐢直连",
+        "📌单选节点",
+        "🇭🇰香港节点",
+        "🇯🇵日本节点",
+        "🇰🇷韩国节点",
+        "🇹🇼台湾节点",
+        "🇸🇬新加坡节点",
+        "🇺🇸美国节点"
+      ],
+      "interrupt_exist_connections": true
+    },
+    {
+      "tag": "🤖OpenAI",
+      "type": "selector",
+      "outbounds": [
+        "🚀默认出站",
+        "🐢直连",
+        "📌单选节点",
+        "🇭🇰香港节点",
+        "🇯🇵日本节点",
+        "🇰🇷韩国节点",
+        "🇹🇼台湾节点",
+        "🇸🇬新加坡节点",
+        "🇺🇸美国节点"
+      ],
+      "interrupt_exist_connections": true
+    },
+    {
+      "tag": "🪟Microsoft",
+      "type": "selector",
+      "outbounds": [
+        "🚀默认出站",
+        "🐢直连",
+        "📌单选节点",
+        "🇭🇰香港节点",
+        "🇯🇵日本节点",
+        "🇰🇷韩国节点",
+        "🇹🇼台湾节点",
+        "🇸🇬新加坡节点",
+        "🇺🇸美国节点"
+      ],
+      "interrupt_exist_connections": true
+    },
+    {
+      "tag": "✈️Telegram",
+      "type": "selector",
+      "outbounds": [
+        "🚀默认出站",
+        "🐢直连",
+        "📌单选节点",
+        "🇭🇰香港节点",
+        "🇯🇵日本节点",
+        "🇰🇷韩国节点",
+        "🇹🇼台湾节点",
+        "🇸🇬新加坡节点",
+        "🇺🇸美国节点"
+      ],
+      "interrupt_exist_connections": true
+    },
+    {
+      "tag": "🖥️SSH",
+      "type": "selector",
+      "outbounds": [
+        "🚀默认出站",
+        "🐢直连",
+        "📌单选节点",
+        "🇭🇰香港节点",
+        "🇯🇵日本节点",
+        "🇰🇷韩国节点",
+        "🇹🇼台湾节点",
+        "🇸🇬新加坡节点",
+        "🇺🇸美国节点"
+      ],
+      "interrupt_exist_connections": true
+    },
+    {
+      "tag": "🐢直连",
+      "type": "direct"
+    },
+    {
+      "tag": "内部DNS",
+      "type": "dns"
+    },
+    {
+      "tag": "🚫阻断",
+      "type": "block"
     }
   ],
-  "rule_set": [
-    {
-      "tag": "geosite_private",
-      "type": "remote",
-      "format": "binary",
-      "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/senzyo/sing-box-rules/master/geosite/private.srs",
-      "download_detour": "🐢直连",
-      "update_interval": "3d"
-    },
-    {
-      "tag": "geoip_private",
-      "type": "remote",
-      "format": "binary",
-      "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/senzyo/sing-box-rules/master/geoip/private.srs",
-      "download_detour": "🐢直连",
-      "update_interval": "3d"
-    },
-    {
-      "tag": "geosite_category-ads-all",
-      "type": "remote",
-      "format": "binary",
-      "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/senzyo/sing-box-rules/master/geosite/category-ads-all.srs",
-      "download_detour": "🐢直连",
-      "update_interval": "3d"
-    },
-    {
-      "tag": "geosite_apple",
-      "type": "remote",
-      "format": "binary",
-      "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/senzyo/sing-box-rules/master/geosite/apple.srs",
-      "download_detour": "🐢直连",
-      "update_interval": "3d"
-    },
-    {
-      "tag": "geosite_category-games@cn",
-      "type": "remote",
-      "format": "binary",
-      "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/senzyo/sing-box-rules/master/geosite/category-games@cn.srs",
-      "download_detour": "🐢直连",
-      "update_interval": "3d"
-    },
-    {
-      "tag": "geosite_category-games",
-      "type": "remote",
-      "format": "binary",
-      "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/senzyo/sing-box-rules/master/geosite/category-games.srs",
-      "download_detour": "🐢直连",
-      "update_interval": "3d"
-    },
-    {
-      "tag": "geosite_google",
-      "type": "remote",
-      "format": "binary",
-      "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/senzyo/sing-box-rules/master/geosite/google.srs",
-      "download_detour": "🐢直连",
-      "update_interval": "3d"
-    },
-    {
-      "tag": "geoip_google",
-      "type": "remote",
-      "format": "binary",
-      "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/senzyo/sing-box-rules/master/geoip/google.srs",
-      "download_detour": "🐢直连",
-      "update_interval": "3d"
-    },
-    {
-      "tag": "geosite_meta",
-      "type": "remote",
-      "format": "binary",
-      "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/senzyo/sing-box-rules/master/geosite/meta.srs",
-      "download_detour": "🐢直连",
-      "update_interval": "3d"
-    },
-    {
-      "tag": "geosite_facebook",
-      "type": "remote",
-      "format": "binary",
-      "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/senzyo/sing-box-rules/master/geosite/facebook.srs",
-      "download_detour": "🐢直连",
-      "update_interval": "3d"
-    },
-    {
-      "tag": "geoip_facebook",
-      "type": "remote",
-      "format": "binary",
-      "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/senzyo/sing-box-rules/master/geoip/facebook.srs",
-      "download_detour": "🐢直连",
-      "update_interval": "3d"
-    },
-    {
-      "tag": "geosite_onedrive",
-      "type": "remote",
-      "format": "binary",
-      "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/senzyo/sing-box-rules/master/geosite/onedrive.srs",
-      "download_detour": "🐢直连",
-      "update_interval": "3d"
-    },
-    {
-      "tag": "geosite_openai",
-      "type": "remote",
-      "format": "binary",
-      "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/senzyo/sing-box-rules/master/geosite/openai.srs",
-      "download_detour": "🐢直连",
-      "update_interval": "3d"
-    },
-    {
-      "tag": "geosite_microsoft",
-      "type": "remote",
-      "format": "binary",
-      "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/senzyo/sing-box-rules/master/geosite/microsoft.srs",
-      "download_detour": "🐢直连",
-      "update_interval": "3d"
-    },
-    {
-      "tag": "geosite_telegram",
-      "type": "remote",
-      "format": "binary",
-      "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/senzyo/sing-box-rules/master/geosite/telegram.srs",
-      "download_detour": "🐢直连",
-      "update_interval": "3d"
-    },
-    {
-      "tag": "geoip_telegram",
-      "type": "remote",
-      "format": "binary",
-      "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/senzyo/sing-box-rules/master/geoip/telegram.srs",
-      "download_detour": "🐢直连",
-      "update_interval": "3d"
-    },
-    {
-      "tag": "geosite_geolocation-!cn",
-      "type": "remote",
-      "format": "binary",
-      "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/senzyo/sing-box-rules/master/geosite/geolocation-!cn.srs",
-      "download_detour": "🐢直连",
-      "update_interval": "3d"
-    },
-    {
-      "tag": "geosite_github",
-      "type": "remote",
-      "format": "binary",
-      "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/senzyo/sing-box-rules/master/geosite/github.srs",
-      "download_detour": "🐢直连",
-      "update_interval": "1d"
-    },
-    {
-      "tag": "geosite_youtube",
-      "type": "remote",
-      "format": "binary",
-      "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/senzyo/sing-box-rules/master/geosite/youtube.srs",
-      "download_detour": "🐢直连",
-      "update_interval": "1d"
-    },
-    {
-      "tag": "geosite_gfw",
-      "type": "remote",
-      "format": "binary",
-      "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/senzyo/sing-box-rules/master/geosite/gfw.srs",
-      "download_detour": "🐢直连",
-      "update_interval": "1d"
-    },
-    {
-      "tag": "geosite_cn",
-      "type": "remote",
-      "format": "binary",
-      "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/senzyo/sing-box-rules/master/geosite/cn.srs",
-      "download_detour": "🐢直连",
-      "update_interval": "3d"
-    },
-    {
-      "tag": "geoip_cn",
-      "type": "remote",
-      "format": "binary",
-      "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/senzyo/sing-box-rules/master/geoip/cn.srs",
-      "download_detour": "🐢直连",
-      "update_interval": "3d"
-    }
-  ]
-}
+  "route": {
+    "auto_detect_interface": true,
+    "final": "🚀默认出站",
+    "rules": [
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "protocol": "dns"
+          },
+          {
+            "port": 53
+          }
+        ],
+        "outbound": "内部DNS"
+      },
+      {
+        "clash_mode": "direct",
+        "outbound": "🐢直连"
+      },
+      {
+        "clash_mode": "global",
+        "outbound": "🚀默认出站"
+      },
+      {
+        "process_name": [
+          "ssh",
+          "ssh.exe",
+          "ssh-agent.exe"
+        ],
+        "outbound": "🖥️SSH"
+      },
+      {
+        "domain_suffix": [
+          "copymanga.site",
+          "mangafuna.xyz",
+          "mangafunb.fun",
+          "senzyo.net"
+        ],
+        "outbound": "🚀默认出站"
+      },
+      {
+        "rule_set": [
+          "geosite_private",
+          "geoip_private"
+        ],
+        "outbound": "🐢直连"
+      },
+      {
+        "rule_set": "geosite_github",
+        "outbound": "🚀默认出站"
+      },
+      {
+        "rule_set": "geosite_youtube",
+        "outbound": "🚀默认出站"
+      },
+      {
+        "rule_set": [
+          "geosite_google",
+          "geoip_google"
+        ],
+        "outbound": "🔎Google"
+      },
+      {
+        "rule_set": "geosite_apple",
+        "outbound": "🍎Apple"
+      },
+      {
+        "rule_set": "geosite_category-games@cn",
+        "outbound": "🐢直连"
+      },
+      {
+        "rule_set": "geosite_category-games",
+        "outbound": "🎮Game"
+      },
+      {
+        "rule_set": [
+          "geosite_meta",
+          "geosite_facebook",
+          "geoip_facebook"
+        ],
+        "outbound": "🥽Meta"
+      },
+      {
+        "rule_set": "geosite_onedrive",
+        "outbound": "☁️OneDrive"
+      },
+      {
+        "rule_set": "geosite_openai",
+        "outbound": "🤖OpenAI"
+      },
+      {
+        "rule_set": "geosite_microsoft",
+        "outbound": "🪟Microsoft"
+      },
+      {
+        "rule_set": [
+          "geosite_telegram",
+          "geoip_telegram"
+        ],
+        "outbound": "✈️Telegram"
+      },
+      {
+        "rule_set": [
+          "geosite_cn",
+          "geoip_cn"
+        ],
+        "outbound": "🐢直连"
+      },
+      {
+        "rule_set": "geosite_geolocation-!cn",
+        "outbound": "🚀默认出站"
+      },
+      {
+        "rule_set": "geosite_gfw",
+        "outbound": "🚀默认出站"
+      }
+    ],
+    "rule_set": [
+      {
+        "tag": "geosite_private",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/senzyo/sing-box-rules/master/geosite/private.srs",
+        "download_detour": "🐢直连",
+        "update_interval": "3d"
+      },
+      {
+        "tag": "geoip_private",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/senzyo/sing-box-rules/master/geoip/private.srs",
+        "download_detour": "🐢直连",
+        "update_interval": "3d"
+      },
+      {
+        "tag": "geosite_category-ads-all",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/senzyo/sing-box-rules/master/geosite/category-ads-all.srs",
+        "download_detour": "🐢直连",
+        "update_interval": "3d"
+      },
+      {
+        "tag": "geosite_apple",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/senzyo/sing-box-rules/master/geosite/apple.srs",
+        "download_detour": "🐢直连",
+        "update_interval": "3d"
+      },
+      {
+        "tag": "geosite_category-games@cn",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/senzyo/sing-box-rules/master/geosite/category-games@cn.srs",
+        "download_detour": "🐢直连",
+        "update_interval": "3d"
+      },
+      {
+        "tag": "geosite_category-games",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/senzyo/sing-box-rules/master/geosite/category-games.srs",
+        "download_detour": "🐢直连",
+        "update_interval": "3d"
+      },
+      {
+        "tag": "geosite_google",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/senzyo/sing-box-rules/master/geosite/google.srs",
+        "download_detour": "🐢直连",
+        "update_interval": "3d"
+      },
+      {
+        "tag": "geoip_google",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/senzyo/sing-box-rules/master/geoip/google.srs",
+        "download_detour": "🐢直连",
+        "update_interval": "3d"
+      },
+      {
+        "tag": "geosite_meta",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/senzyo/sing-box-rules/master/geosite/meta.srs",
+        "download_detour": "🐢直连",
+        "update_interval": "3d"
+      },
+      {
+        "tag": "geosite_facebook",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/senzyo/sing-box-rules/master/geosite/facebook.srs",
+        "download_detour": "🐢直连",
+        "update_interval": "3d"
+      },
+      {
+        "tag": "geoip_facebook",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/senzyo/sing-box-rules/master/geoip/facebook.srs",
+        "download_detour": "🐢直连",
+        "update_interval": "3d"
+      },
+      {
+        "tag": "geosite_onedrive",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/senzyo/sing-box-rules/master/geosite/onedrive.srs",
+        "download_detour": "🐢直连",
+        "update_interval": "3d"
+      },
+      {
+        "tag": "geosite_openai",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/senzyo/sing-box-rules/master/geosite/openai.srs",
+        "download_detour": "🐢直连",
+        "update_interval": "3d"
+      },
+      {
+        "tag": "geosite_microsoft",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/senzyo/sing-box-rules/master/geosite/microsoft.srs",
+        "download_detour": "🐢直连",
+        "update_interval": "3d"
+      },
+      {
+        "tag": "geosite_telegram",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/senzyo/sing-box-rules/master/geosite/telegram.srs",
+        "download_detour": "🐢直连",
+        "update_interval": "3d"
+      },
+      {
+        "tag": "geoip_telegram",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/senzyo/sing-box-rules/master/geoip/telegram.srs",
+        "download_detour": "🐢直连",
+        "update_interval": "3d"
+      },
+      {
+        "tag": "geosite_geolocation-!cn",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/senzyo/sing-box-rules/master/geosite/geolocation-!cn.srs",
+        "download_detour": "🐢直连",
+        "update_interval": "3d"
+      },
+      {
+        "tag": "geosite_github",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/senzyo/sing-box-rules/master/geosite/github.srs",
+        "download_detour": "🐢直连",
+        "update_interval": "1d"
+      },
+      {
+        "tag": "geosite_youtube",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/senzyo/sing-box-rules/master/geosite/youtube.srs",
+        "download_detour": "🐢直连",
+        "update_interval": "1d"
+      },
+      {
+        "tag": "geosite_gfw",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/senzyo/sing-box-rules/master/geosite/gfw.srs",
+        "download_detour": "🐢直连",
+        "update_interval": "1d"
+      },
+      {
+        "tag": "geosite_cn",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/senzyo/sing-box-rules/master/geosite/cn.srs",
+        "download_detour": "🐢直连",
+        "update_interval": "3d"
+      },
+      {
+        "tag": "geoip_cn",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/senzyo/sing-box-rules/master/geoip/cn.srs",
+        "download_detour": "🐢直连",
+        "update_interval": "3d"
+      }
+    ]
+  }
 }
