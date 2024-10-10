@@ -138,7 +138,7 @@
       "tag": "🇭🇰香港节点",
       "type": "urltest",
       "outbounds": [
-        "{all}"
+        "{tag_2}"
       ],
       "filter": [
         {
@@ -163,7 +163,7 @@
         {
           "action": "include",
           "keywords": [
-            "🇭🇰|香港|HK|HongKong"
+            "PRO.+香港"
           ]
         }
       ],
@@ -176,7 +176,7 @@
       "tag": "🇯🇵日本节点",
       "type": "urltest",
       "outbounds": [
-        "{all}"
+        "{tag_2}"
       ],
       "filter": [
         {
@@ -195,7 +195,7 @@
       "tag": "🇰🇷韩国节点",
       "type": "urltest",
       "outbounds": [
-        "{all}"
+        "{tag_2}"
       ],
       "filter": [
         {
@@ -214,7 +214,7 @@
       "tag": "🇹🇼台湾节点",
       "type": "urltest",
       "outbounds": [
-        "{all}"
+        "{tag_2}"
       ],
       "filter": [
         {
@@ -233,7 +233,7 @@
       "tag": "🇸🇬新加坡节点",
       "type": "urltest",
       "outbounds": [
-        "{all}"
+        "{tag_2}"
       ],
       "filter": [
         {
@@ -252,7 +252,7 @@
       "tag": "🇺🇸美国节点",
       "type": "urltest",
       "outbounds": [
-        "{all}"
+        "{tag_2}"
       ],
       "filter": [
         {
@@ -271,7 +271,7 @@
       "tag": "📌单选节点",
       "type": "selector",
       "outbounds": [
-        "{all}"
+        "{tag_2}"
       ],
       "filter": [
         {
