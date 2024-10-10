@@ -154,6 +154,25 @@
       "interrupt_exist_connections": true
     },
     {
+      "tag": "🇭🇰香港节点-JKL",
+      "type": "urltest",
+      "outbounds": [
+        "{jinkela}"
+      ],
+      "filter": [
+        {
+          "action": "include",
+          "keywords": [
+            "🇭🇰|香港|HK|HongKong"
+          ]
+        }
+      ],
+      "url": "https://www.gstatic.com/generate_204",
+      "interval": "7m",
+      "tolerance": 0,
+      "interrupt_exist_connections": true
+    },
+    {
       "tag": "🇯🇵日本节点",
       "type": "urltest",
       "outbounds": [
