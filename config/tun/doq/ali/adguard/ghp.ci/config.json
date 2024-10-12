@@ -493,14 +493,6 @@
         "outbound": "🚀默认出站"
       },
       {
-        "process_name": [
-          "ssh",
-          "ssh.exe",
-          "ssh-agent.exe"
-        ],
-        "outbound": "🖥️SSH"
-      },
-      {
         "domain_suffix": [
           "copymanga.site",
           "mangafuna.xyz",
