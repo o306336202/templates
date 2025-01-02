@@ -325,7 +325,6 @@
       "tag": "🎬Youtube",
       "type": "selector",
       "outbounds": [
-        "🇭🇰香港节点-JKL",
         "🚀默认出站",
         "🇭🇰香港节点",
         "🇯🇵日本节点",
