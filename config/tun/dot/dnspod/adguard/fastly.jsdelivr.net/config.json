@@ -130,7 +130,6 @@
         "🇹🇼台湾节点",
         "🇸🇬新加坡节点",
         "🇺🇸美国节点",
-        "🇭🇰香港节点-JKL",
         "📌单选节点"
       ],
       "interrupt_exist_connections": true
@@ -146,25 +145,6 @@
           "action": "include",
           "keywords": [
             "🇭🇰|香港|HK|HongKong"
-          ]
-        }
-      ],
-      "url": "https://www.gstatic.com/generate_204",
-      "interval": "7m",
-      "tolerance": 0,
-      "interrupt_exist_connections": true
-    },
-    {
-      "tag": "🇭🇰香港节点-JKL",
-      "type": "urltest",
-      "outbounds": [
-        "{all}"
-      ],
-      "filter": [
-        {
-          "action": "include",
-          "keywords": [
-            "PRO.+香港"
           ]
         }
       ],
