@@ -158,7 +158,7 @@
       "tag": "🇭🇰香港节点-JKL",
       "type": "urltest",
       "outbounds": [
-        "{tag_2}"
+        "{all}"
       ],
       "filter": [
         {
