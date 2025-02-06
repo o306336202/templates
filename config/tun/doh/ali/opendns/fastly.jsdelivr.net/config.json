@@ -106,16 +106,13 @@
           "server": "127.0.0.1",
           "server_port": 7890
         }
-      },
-      "sniff": true,
-      "sniff_override_destination": false
+      }
     },
     {
       "type": "mixed",
+      "tag": "mixed",
       "listen": "::",
-      "listen_port": 7890,
-      "sniff": true,
-      "sniff_override_destination": false
+      "listen_port": 7890
     }
   ],
   "outbounds": [
@@ -432,6 +429,14 @@
     "auto_detect_interface": true,
     "final": "🚀默认出站",
     "rules": [
+      {
+        "inbound": "tun",
+        "action": "sniff"
+      },
+      {
+        "inbound": "mixed",
+        "action": "sniff"
+      },
       {
         "type": "logical",
         "mode": "or",
