@@ -427,10 +427,6 @@
     {
       "tag": "🐢直连",
       "type": "direct"
-    },
-    {
-      "tag": "内部DNS",
-      "type": "dns"
     }
   ],
   "route": {
@@ -448,7 +444,7 @@
             "port": 53
           }
         ],
-        "outbound": "内部DNS"
+        "action": "hijack-dns"
       },
       {
         "clash_mode": "direct",
