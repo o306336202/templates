@@ -440,10 +440,6 @@
     {
       "tag": "内部DNS",
       "type": "dns"
-    },
-    {
-      "tag": "🚫阻断",
-      "type": "block"
     }
   ],
   "route": {
