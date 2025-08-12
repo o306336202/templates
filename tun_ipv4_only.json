@@ -20,20 +20,20 @@
   "dns": {
     "servers": [
       {
+        "type": "https",
         "tag": "国际DNS",
-        "address": "https://dns.google/dns-query",
-        "address_resolver": "默认DNS",
-        "address_strategy": "ipv4_only",
+        "server": "dns.google",
         "detour": "🚀默认出站"
       },
       {
+        "type": "tls",
         "tag": "默认DNS",
-        "address": "tls://1.12.12.12",
+        "server": "1.12.12.12",
         "detour": "🐢直连"
       },
       {
+        "type": "local",
         "tag": "系统DNS",
-        "address": "local",
         "detour": "🐢直连"
       }
     ],
@@ -91,10 +91,7 @@
     {
       "type": "tun",
       "tag": "tun",
-      "address": [
-        "172.18.0.1/30",
-        "fdfe:dcba:9876::1/126"
-      ],
+      "address": ["172.18.0.1/30", "fdfe:dcba:9876::1/126"],
       "gso": false,
       "auto_route": true,
       "strict_route": true,
@@ -133,15 +130,11 @@
     {
       "tag": "🇭🇰香港节点",
       "type": "urltest",
-      "outbounds": [
-        "{all}"
-      ],
+      "outbounds": ["{all}"],
       "filter": [
         {
           "action": "include",
-          "keywords": [
-            "🇭🇰|香港|HK|HongKong"
-          ]
+          "keywords": ["🇭🇰|香港|HK|HongKong"]
         }
       ],
       "url": "https://www.gstatic.com/generate_204",
@@ -152,15 +145,11 @@
     {
       "tag": "🇯🇵日本节点",
       "type": "urltest",
-      "outbounds": [
-        "{all}"
-      ],
+      "outbounds": ["{all}"],
       "filter": [
         {
           "action": "include",
-          "keywords": [
-            "🇯🇵|日本|JP|Japan"
-          ]
+          "keywords": ["🇯🇵|日本|JP|Japan"]
         }
       ],
       "url": "https://www.gstatic.com/generate_204",
@@ -171,15 +160,11 @@
     {
       "tag": "🇰🇷韩国节点",
       "type": "urltest",
-      "outbounds": [
-        "{all}"
-      ],
+      "outbounds": ["{all}"],
       "filter": [
         {
           "action": "include",
-          "keywords": [
-            "🇰🇷|韩国|KR|SouthKorea"
-          ]
+          "keywords": ["🇰🇷|韩国|KR|SouthKorea"]
         }
       ],
       "url": "https://www.gstatic.com/generate_204",
@@ -190,15 +175,11 @@
     {
       "tag": "🇹🇼台湾节点",
       "type": "urltest",
-      "outbounds": [
-        "{all}"
-      ],
+      "outbounds": ["{all}"],
       "filter": [
         {
           "action": "include",
-          "keywords": [
-            "🇹🇼|台湾|TW|Taiwan"
-          ]
+          "keywords": ["🇹🇼|台湾|TW|Taiwan"]
         }
       ],
       "url": "https://www.gstatic.com/generate_204",
@@ -209,15 +190,11 @@
     {
       "tag": "🇸🇬新加坡节点",
       "type": "urltest",
-      "outbounds": [
-        "{all}"
-      ],
+      "outbounds": ["{all}"],
       "filter": [
         {
           "action": "include",
-          "keywords": [
-            "🇸🇬|新加坡|SG|Singapore"
-          ]
+          "keywords": ["🇸🇬|新加坡|SG|Singapore"]
         }
       ],
       "url": "https://www.gstatic.com/generate_204",
@@ -228,15 +205,11 @@
     {
       "tag": "🇺🇸美国节点",
       "type": "urltest",
-      "outbounds": [
-        "{all}"
-      ],
+      "outbounds": ["{all}"],
       "filter": [
         {
           "action": "include",
-          "keywords": [
-            "🇺🇸|美国|US|USA|UnitedStates"
-          ]
+          "keywords": ["🇺🇸|美国|US|USA|UnitedStates"]
         }
       ],
       "url": "https://www.gstatic.com/generate_204",
@@ -247,9 +220,7 @@
     {
       "tag": "📌单选节点",
       "type": "selector",
-      "outbounds": [
-        "{all}"
-      ],
+      "outbounds": ["{all}"],
       "filter": [
         {
           "action": "exclude",
@@ -426,8 +397,6 @@
     }
   ],
   "route": {
-    "auto_detect_interface": true,
-    "final": "🚀默认出站",
     "rules": [
       {
         "inbound": "tun",
@@ -468,10 +437,7 @@
         "outbound": "🚀默认出站"
       },
       {
-        "rule_set": [
-          "geosite_private",
-          "geoip_private"
-        ],
+        "rule_set": ["geosite_private", "geoip_private"],
         "outbound": "🐢直连"
       },
       {
@@ -483,10 +449,7 @@
         "outbound": "🎬Youtube"
       },
       {
-        "rule_set": [
-          "geosite_google",
-          "geoip_google"
-        ],
+        "rule_set": ["geosite_google", "geoip_google"],
         "outbound": "🔎Google"
       },
       {
@@ -502,11 +465,7 @@
         "outbound": "🎮Game"
       },
       {
-        "rule_set": [
-          "geosite_meta",
-          "geosite_facebook",
-          "geoip_facebook"
-        ],
+        "rule_set": ["geosite_meta", "geosite_facebook", "geoip_facebook"],
         "outbound": "🥽Meta"
       },
       {
@@ -522,17 +481,11 @@
         "outbound": "🪟Microsoft"
       },
       {
-        "rule_set": [
-          "geosite_telegram",
-          "geoip_telegram"
-        ],
+        "rule_set": ["geosite_telegram", "geoip_telegram"],
         "outbound": "✈️Telegram"
       },
       {
-        "rule_set": [
-          "geosite_cn",
-          "geoip_cn"
-        ],
+        "rule_set": ["geosite_cn", "geoip_cn"],
         "outbound": "🐢直连"
       },
       {
@@ -721,6 +674,8 @@
         "download_detour": "🐢直连",
         "update_interval": "3d"
       }
-    ]
+    ],
+    "final": "🚀默认出站",
+    "auto_detect_interface": true
   }
 }
