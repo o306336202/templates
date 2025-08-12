@@ -20,20 +20,20 @@
   "dns": {
     "servers": [
       {
+        "type": "https",
         "tag": "国际DNS",
-        "address": "https://dns.google/dns-query",
-        "address_resolver": "默认DNS",
-        "address_strategy": "ipv4_only",
+        "server": "dns.google",
         "detour": "🚀默认出站"
       },
       {
+        "type": "tls",
         "tag": "默认DNS",
-        "address": "tls://1.12.12.12",
+        "server": "1.12.12.12",
         "detour": "🐢直连"
       },
       {
+        "type": "local",
         "tag": "系统DNS",
-        "address": "local",
         "detour": "🐢直连"
       }
     ],
@@ -426,8 +426,6 @@
     }
   ],
   "route": {
-    "auto_detect_interface": true,
-    "final": "🚀默认出站",
     "rules": [
       {
         "inbound": "tun",
@@ -721,6 +719,8 @@
         "download_detour": "🐢直连",
         "update_interval": "3d"
       }
-    ]
+    ],
+    "final": "🚀默认出站",
+    "auto_detect_interface": true
   }
 }
