@@ -26,10 +26,6 @@
     ],
     "rules": [
       {
-        "query_type": "HTTPS",
-        "action": "reject"
-      },
-      {
         "clash_mode": "direct",
         "server": "local"
       },
