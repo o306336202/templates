@@ -32,6 +32,18 @@
       },
       {
         "clash_mode": "global",
+        "server": "fakeip"
+      },
+      {
+        "query_type": "HTTPS",
+        "action": "reject"
+      },
+      {
+        "domain_suffix": [
+          "services.googleapis.cn",
+          "googleapis.cn",
+          "xn--ngstr-lra8j.com"
+        ],
         "server": "foreign"
       },
       {
@@ -53,7 +65,8 @@
     ],
     "final": "foreign",
     "strategy": "ipv4_only",
-    "independent_cache": true
+    "independent_cache": true,
+    "reverse_mapping": true
   },
   "outbounds": [
     {
