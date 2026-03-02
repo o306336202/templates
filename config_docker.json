@@ -33,7 +33,7 @@
       {
         "tag": "DirectDNS",
         "type": "https",
-        "server": "doh.pub",
+        "server": "dns.alidns.com",
         "domain_resolver": "AliDNS"
       },
       {
@@ -57,37 +57,26 @@
         "server": "ProxyDNS"
       },
       {
-        "query_type": [
-          "A",
-          "AAAA"
-        ],
+        "query_type": ["A", "AAAA"],
         "server": "FakeIP"
       },
       {
-        "rule_set": [
-          "geosite-category-ads-all"
-        ],
+        "rule_set": ["geosite-category-ads-all"],
         "server": "DirectDNS",
         "action": "reject",
         "method": "default",
         "no_drop": false
       },
       {
-        "rule_set": [
-          "geosite-category-games@cn"
-        ],
+        "rule_set": ["geosite-category-games@cn"],
         "server": "DirectDNS"
       },
       {
-        "rule_set": [
-          "geosite-geolocation-!cn"
-        ],
+        "rule_set": ["geosite-geolocation-!cn"],
         "server": "ProxyDNS"
       },
       {
-        "rule_set": [
-          "geosite-cn"
-        ],
+        "rule_set": ["geosite-cn"],
         "server": "DirectDNS"
       }
     ],
@@ -125,9 +114,7 @@
     {
       "tag": "🌏日韩台新",
       "type": "urltest",
-      "outbounds": [
-        "{all}"
-      ],
+      "outbounds": ["{all}"],
       "filter": [
         {
           "action": "include",
@@ -144,9 +131,7 @@
     {
       "tag": "📌单选节点",
       "type": "selector",
-      "outbounds": [
-        "{all}"
-      ],
+      "outbounds": ["{all}"],
       "filter": [
         {
           "action": "exclude",
@@ -160,15 +145,11 @@
     {
       "tag": "🇭🇰香港节点",
       "type": "urltest",
-      "outbounds": [
-        "{all}"
-      ],
+      "outbounds": ["{all}"],
       "filter": [
         {
           "action": "include",
-          "keywords": [
-            "🇭🇰|香港|HK|Hong Kong"
-          ]
+          "keywords": ["🇭🇰|香港|HK|Hong Kong"]
         }
       ],
       "url": "https://www.gstatic.com/generate_204",
@@ -179,15 +160,11 @@
     {
       "tag": "🇯🇵日本节点",
       "type": "urltest",
-      "outbounds": [
-        "{all}"
-      ],
+      "outbounds": ["{all}"],
       "filter": [
         {
           "action": "include",
-          "keywords": [
-            "🇯🇵|日本|JP|Japan"
-          ]
+          "keywords": ["🇯🇵|日本|JP|Japan"]
         }
       ],
       "url": "https://www.gstatic.com/generate_204",
@@ -198,15 +175,11 @@
     {
       "tag": "🇰🇷韩国节点",
       "type": "urltest",
-      "outbounds": [
-        "{all}"
-      ],
+      "outbounds": ["{all}"],
       "filter": [
         {
           "action": "include",
-          "keywords": [
-            "🇰🇷|韩国|KR|South Korea"
-          ]
+          "keywords": ["🇰🇷|韩国|KR|South Korea"]
         }
       ],
       "url": "https://www.gstatic.com/generate_204",
@@ -217,15 +190,11 @@
     {
       "tag": "🇹🇼台湾节点",
       "type": "urltest",
-      "outbounds": [
-        "{all}"
-      ],
+      "outbounds": ["{all}"],
       "filter": [
         {
           "action": "include",
-          "keywords": [
-            "🇹🇼|台湾|TW|Taiwan"
-          ]
+          "keywords": ["🇹🇼|台湾|TW|Taiwan"]
         }
       ],
       "url": "https://www.gstatic.com/generate_204",
@@ -236,15 +205,11 @@
     {
       "tag": "🇸🇬新加坡节点",
       "type": "urltest",
-      "outbounds": [
-        "{all}"
-      ],
+      "outbounds": ["{all}"],
       "filter": [
         {
           "action": "include",
-          "keywords": [
-            "🇸🇬|新加坡|SG|Singapore"
-          ]
+          "keywords": ["🇸🇬|新加坡|SG|Singapore"]
         }
       ],
       "url": "https://www.gstatic.com/generate_204",
@@ -255,15 +220,11 @@
     {
       "tag": "🇺🇸美国节点",
       "type": "urltest",
-      "outbounds": [
-        "{all}"
-      ],
+      "outbounds": ["{all}"],
       "filter": [
         {
           "action": "include",
-          "keywords": [
-            "🇺🇸|美国|US|USA|United States"
-          ]
+          "keywords": ["🇺🇸|美国|US|USA|United States"]
         }
       ],
       "url": "https://www.gstatic.com/generate_204",
@@ -284,10 +245,7 @@
     "final": "🚀FinalOut",
     "rules": [
       {
-        "inbound": [
-          "mixed-in",
-          "tun-in"
-        ],
+        "inbound": ["mixed-in", "tun-in"],
         "action": "sniff"
       },
       {
@@ -304,9 +262,7 @@
         "action": "hijack-dns"
       },
       {
-        "rule_set": [
-          "geosite-private"
-        ],
+        "rule_set": ["geosite-private"],
         "outbound": "🐢Direct"
       },
       {
@@ -339,9 +295,7 @@
         "action": "reject"
       },
       {
-        "rule_set": [
-          "geosite-category-ads-all"
-        ],
+        "rule_set": ["geosite-category-ads-all"],
         "action": "reject"
       },
       {
@@ -349,27 +303,19 @@
         "outbound": "🐢Direct"
       },
       {
-        "rule_set": [
-          "geosite-category-games@cn"
-        ],
+        "rule_set": ["geosite-category-games@cn"],
         "outbound": "🐢Direct"
       },
       {
-        "rule_set": [
-          "geosite-geolocation-!cn"
-        ],
+        "rule_set": ["geosite-geolocation-!cn"],
         "outbound": "🚀FinalOut"
       },
       {
-        "rule_set": [
-          "geosite-cn"
-        ],
+        "rule_set": ["geosite-cn"],
         "outbound": "🐢Direct"
       },
       {
-        "rule_set": [
-          "geoip-cn"
-        ],
+        "rule_set": ["geoip-cn"],
         "outbound": "🐢Direct"
       }
     ],
