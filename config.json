@@ -255,7 +255,6 @@
     "final": "🚀FinalOut",
     "rules": [
       {
-        "inbound": ["mixed-in", "tun-in"],
         "action": "sniff"
       },
       {
