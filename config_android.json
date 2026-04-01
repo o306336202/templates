@@ -235,6 +235,7 @@
       "server": "DirectDNS"
     },
     "auto_detect_interface": true,
+    "override_android_vpn": true,
     "final": "🚀FinalOut",
     "rules": [
       {
