@@ -70,12 +70,6 @@
       },
       {
         "rule_set": [
-          "geosite-geolocation-!cn"
-        ],
-        "server": "ProxyDNS"
-      },
-      {
-        "rule_set": [
           "geosite-cn"
         ],
         "server": "DirectDNS"
