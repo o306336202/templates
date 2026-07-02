@@ -100,14 +100,28 @@
       "tag": "🚀FinalOut",
       "type": "selector",
       "outbounds": [
-        "🌏日韩台新",
         "📌单选节点",
+        "🌏日韩台新",
         "🇭🇰香港节点",
         "🇯🇵日本节点",
         "🇰🇷韩国节点",
         "🇹🇼台湾节点",
         "🇸🇬新加坡节点",
         "🇺🇸美国节点"
+      ],
+      "interrupt_exist_connections": true
+    },
+    {
+      "tag": "📌单选节点",
+      "type": "selector",
+      "outbounds": ["{all}"],
+      "filter": [
+        {
+          "action": "exclude",
+          "keywords": [
+            "剩余|流量|raffic|有效|时间|到期|xpire|地址|网址|官网|自动|最优|最快"
+          ]
+        }
       ],
       "interrupt_exist_connections": true
     },
@@ -126,20 +140,6 @@
       "url": "https://www.gstatic.com/generate_204",
       "interval": "10m",
       "tolerance": 10,
-      "interrupt_exist_connections": true
-    },
-    {
-      "tag": "📌单选节点",
-      "type": "selector",
-      "outbounds": ["{all}"],
-      "filter": [
-        {
-          "action": "exclude",
-          "keywords": [
-            "剩余|流量|raffic|有效|时间|到期|xpire|地址|网址|官网|自动|最优|最快"
-          ]
-        }
-      ],
       "interrupt_exist_connections": true
     },
     {
