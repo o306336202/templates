@@ -93,7 +93,7 @@
       "type": "tun",
       "tag": "tun-in",
       "address": "172.18.0.1/30",
-      "auto_route": true,
+      "auto_route": false,
       "strict_route": false,
       "endpoint_independent_nat": false,
       "stack": "system",
@@ -422,6 +422,7 @@
     "default_domain_resolver": {
       "server": "DirectDNS"
     },
-    "auto_detect_interface": true
+    "auto_detect_interface": true,
+    "override_android_vpn": true
   }
 }
