@@ -120,21 +120,6 @@
   ],
   "outbounds": [
     {
-      "tag": "🚀FinalOut",
-      "type": "selector",
-      "outbounds": [
-        "🌏日韩台新",
-        "📌单选节点",
-        "🇭🇰香港节点",
-        "🇯🇵日本节点",
-        "🇰🇷韩国节点",
-        "🇹🇼台湾节点",
-        "🇸🇬新加坡节点",
-        "🇺🇸美国节点"
-      ],
-      "interrupt_exist_connections": true
-    },
-    {
       "tag": "🌏日韩台新",
       "type": "urltest",
       "outbounds": [
@@ -286,6 +271,36 @@
     {
       "tag": "🐢Direct",
       "type": "direct"
+    },
+    {
+      "tag": "🚀AI",
+      "type": "selector",
+      "outbounds": [
+        "🌏日韩台新",
+        "📌单选节点",
+        "🇭🇰香港节点",
+        "🇯🇵日本节点",
+        "🇰🇷韩国节点",
+        "🇹🇼台湾节点",
+        "🇸🇬新加坡节点",
+        "🇺🇸美国节点"
+      ],
+      "interrupt_exist_connections": true
+    }
+    {
+      "tag": "🚀FinalOut",
+      "type": "selector",
+      "outbounds": [
+        "🌏日韩台新",
+        "📌单选节点",
+        "🇭🇰香港节点",
+        "🇯🇵日本节点",
+        "🇰🇷韩国节点",
+        "🇹🇼台湾节点",
+        "🇸🇬新加坡节点",
+        "🇺🇸美国节点"
+      ],
+      "interrupt_exist_connections": true
     }
   ],
   "route": {
@@ -371,6 +386,12 @@
       },
       {
         "rule_set": [
+          "geosite-ai"
+        ],
+        "outbound": "🚀AI"
+      },
+      {
+        "rule_set": [
           "geoip-cn"
         ],
         "outbound": "🐢Direct"
@@ -424,6 +445,14 @@
         "url": "https://gh-proxy.org/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/sing/geo/geoip/cn.srs",
         "download_detour": "🐢Direct",
         "update_interval": "3d"
+      },
+      {
+        "tag": "geosite-ai",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://gh-proxy.org/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/sing/geo/geosite/category-ai-!cn.srs",
+        "download_detour": "🐢Direct",
+        "update_interval": "3d"
       }
     ],
     "final": "🚀FinalOut",
@@ -431,6 +460,5 @@
       "server": "DirectDNS"
     },
     "auto_detect_interface": true
-    
   }
 }
