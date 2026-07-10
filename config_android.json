@@ -93,8 +93,8 @@
       "type": "tun",
       "tag": "tun-in",
       "address": "172.18.0.1/30",
-      "auto_route": true,
-      "strict_route": true,
+      "auto_route": false,
+      "strict_route": false,
       "endpoint_independent_nat": false,
       "stack": "system",
       "exclude_package": [
