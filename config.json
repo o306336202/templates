@@ -106,10 +106,7 @@
       "auto_route": true,
       "strict_route": true,
       "endpoint_independent_nat": false,
-      "stack": "system",
-      "exclude_package": [
-        "com.android.captiveportallogin"
-      ]
+      "stack": "system"
     },
     {
       "type": "mixed",
@@ -119,6 +116,22 @@
     }
   ],
   "outbounds": [
+    {
+      "tag": "📌单选节点",
+      "type": "selector",
+      "outbounds": [
+        "{all}"
+      ],
+      "filter": [
+        {
+          "action": "exclude",
+          "keywords": [
+            "剩余|流量|raffic|有效|时间|到期|xpire|地址|网址|官网|自动|最优|最快"
+          ]
+        }
+      ],
+      "interrupt_exist_connections": true
+    },
     {
       "tag": "🇭🇰香港节点",
       "type": "urltest",
@@ -231,22 +244,6 @@
       "url": "https://www.gstatic.com/generate_204",
       "interval": "10m",
       "tolerance": 10,
-      "interrupt_exist_connections": true
-    },
-    {
-      "tag": "📌单选节点",
-      "type": "selector",
-      "outbounds": [
-        "{all}"
-      ],
-      "filter": [
-        {
-          "action": "exclude",
-          "keywords": [
-            "剩余|流量|raffic|有效|时间|到期|xpire|地址|网址|官网|自动|最优|最快"
-          ]
-        }
-      ],
       "interrupt_exist_connections": true
     },
     {
