@@ -120,7 +120,7 @@
       "interrupt_exist_connections": true
     },
     {
-      "tag": "🇭🇰香港节点",
+      "tag": "香港节点",
       "type": "urltest",
       "outbounds": [
         "{all}"
@@ -139,7 +139,7 @@
       "interrupt_exist_connections": true
     },
     {
-      "tag": "🇯🇵日本节点",
+      "tag": "日本节点",
       "type": "urltest",
       "outbounds": [
         "{all}"
