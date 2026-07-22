@@ -63,10 +63,6 @@
         "server": "fakeip"
       },
       {
-        "rule_set": "geosite-fakeipfilter",
-        "server": "ali"
-      },
-      {
         "query_type": [
           "A",
           "AAAA"
