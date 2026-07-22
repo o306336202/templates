@@ -269,11 +269,11 @@
         "rule_set": [
           "geosite-private"
         ],
-        "outbound": "direct"
+        "outbound": "直连"
       },
       {
         "ip_is_private": true,
-        "outbound": "direct"
+        "outbound": "直连"
       },
       {
         "type": "logical",
@@ -300,13 +300,13 @@
       },
       {
         "protocol": "bittorrent",
-        "outbound": "direct"
+        "outbound": "直连"
       },
       {
         "rule_set": [
           "geosite-category-games@cn"
         ],
-        "outbound": "direct"
+        "outbound": "直连"
       },
       {
         "rule_set": [
@@ -318,7 +318,7 @@
         "rule_set": [
           "geosite-cn"
         ],
-        "outbound": "direct"
+        "outbound": "直连"
       },
       {
         "rule_set": [
@@ -330,7 +330,7 @@
         "rule_set": [
           "geoip-cn"
         ],
-        "outbound": "direct"
+        "outbound": "直连"
       }
     ],
     "rule_set": [
