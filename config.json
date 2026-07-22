@@ -416,7 +416,7 @@
     ],
     "final": "finalout",
     "default_domain_resolver": {
-      "server": "google"
+      "server": "ali"
     },
     "auto_detect_interface": true
   }
