@@ -310,6 +310,24 @@
       },
       {
         "rule_set": [
+          "geosite-ai"
+        ],
+        "outbound": "ai"
+      },
+      {
+        "rule_set": [
+          "geosite-google"
+        ],
+        "outbound": "默认代理"
+      },
+      {
+        "rule_set": [
+          "geoip-google"
+        ],
+        "outbound": "默认代理"
+      },
+      {
+        "rule_set": [
           "geosite-geolocation-!cn"
         ],
         "outbound": "默认代理"
@@ -319,12 +337,6 @@
           "geosite-cn"
         ],
         "outbound": "直连"
-      },
-      {
-        "rule_set": [
-          "geosite-ai"
-        ],
-        "outbound": "ai"
       },
       {
         "rule_set": [
@@ -389,6 +401,20 @@
         "url": "https://gh-proxy.org/https://raw.githubusercontent.com/metacubex/meta-rules-dat/refs/heads/sing/geo/geosite/category-ai-!cn.srs",
         "download_detour": "直连",
         "update_interval": "3d"
+      },
+      {
+        "tag": "geosite-google",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/google.srs",
+        "download_detour": "直连"
+      },
+      {
+        "tag": "geoip-google",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/google.srs",
+        "download_detour": "直连"
       }
     ],
     "final": "默认代理",
