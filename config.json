@@ -8,8 +8,8 @@
     "clash_api": {
       "external_controller": "0.0.0.0:9090",
       "external_ui": "ui",
-      "external_ui_download_url": "https://gh-proxy.com/https://github.com/Zephyruso/zashboard/archive/refs/heads/gh-pages.zip",
-      "external_ui_download_detour": "🐢Direct",
+      "external_ui_download_url": "https://gh-proxy.com/https://github.com/zephyruso/zashboard/archive/refs/heads/gh-pages.zip",
+      "external_ui_download_detour": "direct",
       "secret": "",
       "default_mode": "rule",
       "access_control_allow_origin": "*",
@@ -24,79 +24,66 @@
   "dns": {
     "servers": [
       {
-        "tag": "ProxyDNS",
-        "type": "https",
-        "server": "dns.google",
-        "domain_resolver": "AliDNS",
-        "detour": "🚀FinalOut"
+        "tag": "local",
+        "type": "local",
+        "prefer_go": true
       },
       {
-        "tag": "DirectDNS",
+        "tag": "ali",
         "type": "https",
-        "server": "dns.alidns.com",
-        "domain_resolver": "AliDNS"
-      },
-      {
-        "tag": "AliDNS",
-        "type": "udp",
         "server": "223.5.5.5"
       },
       {
-        "tag": "FakeIP",
+        "tag": "google",
+        "type": "https",
+        "server": "8.8.8.8",
+        "detour": "finalout"
+      },
+      {
+        "tag": "fakeip",
         "type": "fakeip",
-        "inet4_range": "198.18.0.0/15"
+        "inet4_range": "28.0.0.1/8",
+        "inet6_range": "2001:db8::/32"
       }
     ],
     "rules": [
       {
-        "clash_mode": "direct",
-        "server": "DirectDNS"
+        "query_type": [
+          "HTTPS",
+          "SVCB"
+        ],
+        "action": "reject"
       },
       {
-        "clash_mode": "global",
-        "server": "ProxyDNS"
+        "clash_mode": "Direct",
+        "server": "ali"
+      },
+      {
+        "clash_mode": "Global",
+        "server": "fakeip"
+      },
+      {
+        "rule_set": "geosite-fakeipfilter",
+        "server": "ali"
       },
       {
         "query_type": [
           "A",
           "AAAA"
         ],
-        "server": "FakeIP"
+        "server": "fakeip",
+        "rewrite_ttl": 1
       },
       {
-        "rule_set": [
-          "geosite-category-ads-all"
-        ],
-        "server": "DirectDNS",
-        "action": "reject",
-        "method": "default",
-        "no_drop": false
-      },
-      {
-        "rule_set": [
-          "geosite-category-games@cn"
-        ],
-        "server": "DirectDNS"
-      },
-      {
-        "rule_set": [
-          "geosite-geolocation-!cn"
-        ],
-        "server": "ProxyDNS"
-      },
-      {
-        "rule_set": [
-          "geosite-cn"
-        ],
-        "server": "DirectDNS"
+        "rule_set": "geosite-cn",
+        "server": "ali"
       }
     ],
-    "final": "ProxyDNS",
-    "strategy": "ipv4_only",
-    "disable_cache": false,
-    "disable_expire": false,
+    "final": "google",
+    "strategy": "prefer_ipv4",
     "independent_cache": true,
-    "reverse_mapping": false
+    "cache_capacity": 8192,
+    "reverse_mapping": true
   },
   "inbounds": [
     {
@@ -117,7 +104,7 @@
   ],
   "outbounds": [
     {
-      "tag": "📌单选节点",
+      "tag": "单选节点",
       "type": "selector",
       "outbounds": [
         "{all}"
@@ -142,7 +129,7 @@
         {
           "action": "include",
           "keywords": [
-            "🇭🇰|香港|HK|Hong Kong"
+            "🇭🇰|香港|hk|hong kong"
           ]
         }
       ],
@@ -161,7 +148,7 @@
         {
           "action": "include",
           "keywords": [
-            "🇯🇵|日本|JP|Japan"
+            "🇯🇵|日本|jp|japan"
           ]
         }
       ],
@@ -171,7 +158,7 @@
       "interrupt_exist_connections": true
     },
     {
-      "tag": "🇰🇷韩国节点",
+      "tag": "韩国节点",
       "type": "urltest",
       "outbounds": [
         "{all}"
@@ -180,7 +167,7 @@
         {
           "action": "include",
           "keywords": [
-            "🇰🇷|韩国|KR|South Korea"
+            "🇰🇷|韩国|kr|south korea"
           ]
         }
       ],
@@ -190,7 +177,7 @@
       "interrupt_exist_connections": true
     },
     {
-      "tag": "🇹🇼台湾节点",
+      "tag": "台湾节点",
       "type": "urltest",
       "outbounds": [
         "{all}"
@@ -199,7 +186,7 @@
         {
           "action": "include",
           "keywords": [
-            "🇹🇼|台湾|TW|Taiwan"
+            "🇹🇼|台湾|tw|taiwan"
           ]
         }
       ],
@@ -209,7 +196,7 @@
       "interrupt_exist_connections": true
     },
     {
-      "tag": "🇸🇬新加坡节点",
+      "tag": "新加坡节点",
       "type": "urltest",
       "outbounds": [
         "{all}"
@@ -218,7 +205,7 @@
         {
           "action": "include",
           "keywords": [
-            "🇸🇬|新加坡|SG|Singapore"
+            "🇸🇬|新加坡|sg|singapore"
           ]
         }
       ],
@@ -228,7 +215,7 @@
       "interrupt_exist_connections": true
     },
     {
-      "tag": "🇺🇸美国节点",
+      "tag": "美国节点",
       "type": "urltest",
       "outbounds": [
         "{all}"
@@ -237,7 +224,7 @@
         {
           "action": "include",
           "keywords": [
-            "🇺🇸|美国|US|USA|United States"
+            "🇺🇸|美国|us|usa|united states"
           ]
         }
       ],
@@ -247,34 +234,34 @@
       "interrupt_exist_connections": true
     },
     {
-      "tag": "🐢Direct",
+      "tag": "direct",
       "type": "direct"
     },
     {
-      "tag": "🦄AI",
+      "tag": "ai",
       "type": "selector",
       "outbounds": [
-        "📌单选节点",
-        "🇭🇰香港节点",
-        "🇯🇵日本节点",
-        "🇰🇷韩国节点",
-        "🇹🇼台湾节点",
-        "🇸🇬新加坡节点",
-        "🇺🇸美国节点"
+        "单选节点",
+        "香港节点",
+        "日本节点",
+        "韩国节点",
+        "台湾节点",
+        "新加坡节点",
+        "美国节点"
       ],
       "interrupt_exist_connections": true
     },
     {
-      "tag": "🚀FinalOut",
+      "tag": "finalout",
       "type": "selector",
       "outbounds": [
-        "📌单选节点",
-        "🇭🇰香港节点",
-        "🇯🇵日本节点",
-        "🇰🇷韩国节点",
-        "🇹🇼台湾节点",
-        "🇸🇬新加坡节点",
-        "🇺🇸美国节点"
+        "单选节点",
+        "香港节点",
+        "日本节点",
+        "韩国节点",
+        "台湾节点",
+        "新加坡节点",
+        "美国节点"
       ],
       "interrupt_exist_connections": true
     }
@@ -301,19 +288,19 @@
         "rule_set": [
           "geosite-private"
         ],
-        "outbound": "🐢Direct"
+        "outbound": "direct"
       },
       {
         "ip_is_private": true,
-        "outbound": "🐢Direct"
+        "outbound": "direct"
       },
       {
         "clash_mode": "direct",
-        "outbound": "🐢Direct"
+        "outbound": "direct"
       },
       {
         "clash_mode": "global",
-        "outbound": "🚀FinalOut"
+        "outbound": "finalout"
       },
       {
         "type": "logical",
@@ -340,37 +327,37 @@
       },
       {
         "protocol": "bittorrent",
-        "outbound": "🐢Direct"
+        "outbound": "direct"
       },
       {
         "rule_set": [
           "geosite-category-games@cn"
         ],
-        "outbound": "🐢Direct"
+        "outbound": "direct"
       },
       {
         "rule_set": [
           "geosite-geolocation-!cn"
         ],
-        "outbound": "🚀FinalOut"
+        "outbound": "finalout"
       },
       {
         "rule_set": [
           "geosite-cn"
         ],
-        "outbound": "🐢Direct"
+        "outbound": "direct"
       },
       {
         "rule_set": [
           "geosite-ai"
         ],
-        "outbound": "🦄AI"
+        "outbound": "ai"
       },
       {
         "rule_set": [
           "geoip-cn"
         ],
-        "outbound": "🐢Direct"
+        "outbound": "direct"
       }
     ],
     "rule_set": [
@@ -378,62 +365,62 @@
         "tag": "geosite-private",
         "type": "remote",
         "format": "binary",
-        "url": "https://gh-proxy.org/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/sing/geo/geosite/private.srs",
-        "download_detour": "🐢Direct",
+        "url": "https://gh-proxy.org/https://raw.githubusercontent.com/metacubex/meta-rules-dat/refs/heads/sing/geo/geosite/private.srs",
+        "download_detour": "direct",
         "update_interval": "3d"
       },
       {
         "tag": "geosite-category-ads-all",
         "type": "remote",
         "format": "binary",
-        "url": "https://gh-proxy.org/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/sing/geo/geosite/category-ads-all.srs",
-        "download_detour": "🐢Direct",
+        "url": "https://gh-proxy.org/https://raw.githubusercontent.com/metacubex/meta-rules-dat/refs/heads/sing/geo/geosite/category-ads-all.srs",
+        "download_detour": "direct",
         "update_interval": "3d"
       },
       {
         "tag": "geosite-category-games@cn",
         "type": "remote",
         "format": "binary",
-        "url": "https://gh-proxy.org/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/sing/geo/geosite/category-games@cn.srs",
-        "download_detour": "🐢Direct",
+        "url": "https://gh-proxy.org/https://raw.githubusercontent.com/metacubex/meta-rules-dat/refs/heads/sing/geo/geosite/category-games@cn.srs",
+        "download_detour": "direct",
         "update_interval": "3d"
       },
       {
         "tag": "geosite-geolocation-!cn",
         "type": "remote",
         "format": "binary",
-        "url": "https://gh-proxy.org/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/sing/geo/geosite/geolocation-!cn.srs",
-        "download_detour": "🐢Direct",
+        "url": "https://gh-proxy.org/https://raw.githubusercontent.com/metacubex/meta-rules-dat/refs/heads/sing/geo/geosite/geolocation-!cn.srs",
+        "download_detour": "direct",
         "update_interval": "3d"
       },
       {
         "tag": "geosite-cn",
         "type": "remote",
         "format": "binary",
-        "url": "https://gh-proxy.org/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/sing/geo/geosite/cn.srs",
-        "download_detour": "🐢Direct",
+        "url": "https://gh-proxy.org/https://raw.githubusercontent.com/metacubex/meta-rules-dat/refs/heads/sing/geo/geosite/cn.srs",
+        "download_detour": "direct",
         "update_interval": "3d"
       },
       {
         "tag": "geoip-cn",
         "type": "remote",
         "format": "binary",
-        "url": "https://gh-proxy.org/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/sing/geo/geoip/cn.srs",
-        "download_detour": "🐢Direct",
+        "url": "https://gh-proxy.org/https://raw.githubusercontent.com/metacubex/meta-rules-dat/refs/heads/sing/geo/geoip/cn.srs",
+        "download_detour": "direct",
         "update_interval": "3d"
       },
       {
         "tag": "geosite-ai",
         "type": "remote",
         "format": "binary",
-        "url": "https://gh-proxy.org/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/sing/geo/geosite/category-ai-!cn.srs",
-        "download_detour": "🐢Direct",
+        "url": "https://gh-proxy.org/https://raw.githubusercontent.com/metacubex/meta-rules-dat/refs/heads/sing/geo/geosite/category-ai-!cn.srs",
+        "download_detour": "direct",
         "update_interval": "3d"
       }
     ],
-    "final": "🚀FinalOut",
+    "final": "finalout",
     "default_domain_resolver": {
-      "server": "DirectDNS"
+      "server": "directdns"
     },
     "auto_detect_interface": true
   }
