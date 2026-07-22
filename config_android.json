@@ -84,6 +84,20 @@
   ],
   "outbounds": [
     {
+      "tag": "默认代理",
+      "type": "selector",
+      "outbounds": [
+        "单选节点",
+        "香港节点",
+        "日本节点",
+        "韩国节点",
+        "台湾节点",
+        "新加坡节点",
+        "美国节点"
+      ],
+      "interrupt_exist_connections": true
+    },
+    {
       "tag": "单选节点",
       "type": "selector",
       "outbounds": [
@@ -214,25 +228,12 @@
       "interrupt_exist_connections": true
     },
     {
-      "tag": "direct",
-      "type": "direct"
+      "tag": "直连",
+      "type": "direct",
+      "domain_resolver": "ali"
     },
     {
       "tag": "ai",
-      "type": "selector",
-      "outbounds": [
-        "单选节点",
-        "香港节点",
-        "日本节点",
-        "韩国节点",
-        "台湾节点",
-        "新加坡节点",
-        "美国节点"
-      ],
-      "interrupt_exist_connections": true
-    },
-    {
-      "tag": "默认代理",
       "type": "selector",
       "outbounds": [
         "单选节点",
