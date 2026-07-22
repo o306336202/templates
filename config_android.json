@@ -14,79 +14,62 @@
   "dns": {
     "servers": [
       {
-        "tag": "ProxyDNS",
-        "type": "https",
-        "server": "dns.google",
-        "domain_resolver": "AliDNS",
-        "detour": "🚀FinalOut"
+        "tag": "local",
+        "type": "local",
+        "prefer_go": true
       },
       {
-        "tag": "DirectDNS",
+        "tag": "ali",
         "type": "https",
-        "server": "dns.alidns.com",
-        "domain_resolver": "AliDNS"
-      },
-      {
-        "tag": "AliDNS",
-        "type": "udp",
         "server": "223.5.5.5"
       },
       {
-        "tag": "FakeIP",
+        "tag": "google",
+        "type": "https",
+        "server": "8.8.8.8",
+        "detour": "finalout"
+      },
+      {
+        "tag": "fakeip",
         "type": "fakeip",
-        "inet4_range": "198.18.0.0/15"
+        "inet4_range": "28.0.0.1/8",
+        "inet6_range": "2001:db8::/32"
       }
     ],
     "rules": [
       {
-        "clash_mode": "direct",
-        "server": "DirectDNS"
+        "query_type": [
+          "HTTPS",
+          "SVCB"
+        ],
+        "action": "reject"
       },
       {
-        "clash_mode": "global",
-        "server": "ProxyDNS"
+        "clash_mode": "Direct",
+        "server": "ali"
+      },
+      {
+        "clash_mode": "Global",
+        "server": "fakeip"
       },
       {
         "query_type": [
           "A",
           "AAAA"
         ],
-        "server": "FakeIP"
+        "server": "fakeip",
+        "rewrite_ttl": 1
       },
       {
-        "rule_set": [
-          "geosite-category-ads-all"
-        ],
-        "server": "DirectDNS",
-        "action": "reject",
-        "method": "default",
-        "no_drop": false
-      },
-      {
-        "rule_set": [
-          "geosite-category-games@cn"
-        ],
-        "server": "DirectDNS"
-      },
-      {
-        "rule_set": [
-          "geosite-geolocation-!cn"
-        ],
-        "server": "ProxyDNS"
-      },
-      {
-        "rule_set": [
-          "geosite-cn"
-        ],
-        "server": "DirectDNS"
+        "rule_set": "geosite-cn",
+        "server": "ali"
       }
     ],
-    "final": "ProxyDNS",
-    "strategy": "ipv4_only",
-    "disable_cache": false,
-    "disable_expire": false,
+    "final": "google",
+    "strategy": "prefer_ipv4",
     "independent_cache": true,
-    "reverse_mapping": false
+    "cache_capacity": 8192,
+    "reverse_mapping": true
   },
   "inbounds": [
     {
@@ -101,121 +84,7 @@
   ],
   "outbounds": [
     {
-      "tag": "🇭🇰香港节点",
-      "type": "urltest",
-      "outbounds": [
-        "{all}"
-      ],
-      "filter": [
-        {
-          "action": "include",
-          "keywords": [
-            "🇭🇰|香港|HK|Hong Kong"
-          ]
-        }
-      ],
-      "url": "https://www.gstatic.com/generate_204",
-      "interval": "10m",
-      "tolerance": 10,
-      "interrupt_exist_connections": true
-    },
-    {
-      "tag": "🇯🇵日本节点",
-      "type": "urltest",
-      "outbounds": [
-        "{all}"
-      ],
-      "filter": [
-        {
-          "action": "include",
-          "keywords": [
-            "🇯🇵|日本|JP|Japan"
-          ]
-        }
-      ],
-      "url": "https://www.gstatic.com/generate_204",
-      "interval": "10m",
-      "tolerance": 10,
-      "interrupt_exist_connections": true
-    },
-    {
-      "tag": "🇰🇷韩国节点",
-      "type": "urltest",
-      "outbounds": [
-        "{all}"
-      ],
-      "filter": [
-        {
-          "action": "include",
-          "keywords": [
-            "🇰🇷|韩国|KR|South Korea"
-          ]
-        }
-      ],
-      "url": "https://www.gstatic.com/generate_204",
-      "interval": "10m",
-      "tolerance": 10,
-      "interrupt_exist_connections": true
-    },
-    {
-      "tag": "🇹🇼台湾节点",
-      "type": "urltest",
-      "outbounds": [
-        "{all}"
-      ],
-      "filter": [
-        {
-          "action": "include",
-          "keywords": [
-            "🇹🇼|台湾|TW|Taiwan"
-          ]
-        }
-      ],
-      "url": "https://www.gstatic.com/generate_204",
-      "interval": "10m",
-      "tolerance": 10,
-      "interrupt_exist_connections": true
-    },
-    {
-      "tag": "🇸🇬新加坡节点",
-      "type": "urltest",
-      "outbounds": [
-        "{all}"
-      ],
-      "filter": [
-        {
-          "action": "include",
-          "keywords": [
-            "🇸🇬|新加坡|SG|Singapore"
-          ]
-        }
-      ],
-      "url": "https://www.gstatic.com/generate_204",
-      "interval": "10m",
-      "tolerance": 10,
-      "interrupt_exist_connections": true
-    },
-    {
-      "tag": "🇺🇸美国节点",
-      "type": "urltest",
-      "outbounds": [
-        "{all}"
-      ],
-      "filter": [
-        {
-          "action": "include",
-          "keywords": [
-            "🇺🇸|美国|US|USA|United States"
-          ]
-        }
-      ],
-      "url": "https://www.gstatic.com/generate_204",
-      "interval": "10m",
-      "tolerance": 10,
-      "interrupt_exist_connections": true
-    },
-    {
-      "tag": "📌单选节点",
+      "tag": "单选节点",
       "type": "selector",
       "outbounds": [
         "{all}"
@@ -231,48 +100,154 @@
       "interrupt_exist_connections": true
     },
     {
-      "tag": "🐢Direct",
+      "tag": "香港节点",
+      "type": "urltest",
+      "outbounds": [
+        "{all}"
+      ],
+      "filter": [
+        {
+          "action": "include",
+          "keywords": [
+            "🇭🇰|香港|hk|hong kong"
+          ]
+        }
+      ],
+      "url": "https://www.gstatic.com/generate_204",
+      "interval": "10m",
+      "tolerance": 100,
+      "interrupt_exist_connections": true
+    },
+    {
+      "tag": "日本节点",
+      "type": "urltest",
+      "outbounds": [
+        "{all}"
+      ],
+      "filter": [
+        {
+          "action": "include",
+          "keywords": [
+            "🇯🇵|日本|jp|japan"
+          ]
+        }
+      ],
+      "url": "https://www.gstatic.com/generate_204",
+      "interval": "10m",
+      "tolerance": 100,
+      "interrupt_exist_connections": true
+    },
+    {
+      "tag": "韩国节点",
+      "type": "urltest",
+      "outbounds": [
+        "{all}"
+      ],
+      "filter": [
+        {
+          "action": "include",
+          "keywords": [
+            "🇰🇷|韩国|kr|south korea"
+          ]
+        }
+      ],
+      "url": "https://www.gstatic.com/generate_204",
+      "interval": "10m",
+      "tolerance": 100,
+      "interrupt_exist_connections": true
+    },
+    {
+      "tag": "台湾节点",
+      "type": "urltest",
+      "outbounds": [
+        "{all}"
+      ],
+      "filter": [
+        {
+          "action": "include",
+          "keywords": [
+            "🇹🇼|台湾|tw|taiwan"
+          ]
+        }
+      ],
+      "url": "https://www.gstatic.com/generate_204",
+      "interval": "10m",
+      "tolerance": 100,
+      "interrupt_exist_connections": true
+    },
+    {
+      "tag": "新加坡节点",
+      "type": "urltest",
+      "outbounds": [
+        "{all}"
+      ],
+      "filter": [
+        {
+          "action": "include",
+          "keywords": [
+            "🇸🇬|新加坡|sg|singapore"
+          ]
+        }
+      ],
+      "url": "https://www.gstatic.com/generate_204",
+      "interval": "10m",
+      "tolerance": 100,
+      "interrupt_exist_connections": true
+    },
+    {
+      "tag": "美国节点",
+      "type": "urltest",
+      "outbounds": [
+        "{all}"
+      ],
+      "filter": [
+        {
+          "action": "include",
+          "keywords": [
+            "🇺🇸|美国|us|usa|united states"
+          ]
+        }
+      ],
+      "url": "https://www.gstatic.com/generate_204",
+      "interval": "10m",
+      "tolerance": 100,
+      "interrupt_exist_connections": true
+    },
+    {
+      "tag": "direct",
       "type": "direct"
     },
     {
-      "tag": "🦄AI",
+      "tag": "ai",
       "type": "selector",
       "outbounds": [
-        "📌单选节点",
-        "🇭🇰香港节点",
-        "🇯🇵日本节点",
-        "🇰🇷韩国节点",
-        "🇹🇼台湾节点",
-        "🇸🇬新加坡节点",
-        "🇺🇸美国节点"
+        "单选节点",
+        "香港节点",
+        "日本节点",
+        "韩国节点",
+        "台湾节点",
+        "新加坡节点",
+        "美国节点"
       ],
       "interrupt_exist_connections": true
     },
     {
-      "tag": "🚀FinalOut",
+      "tag": "finalout",
       "type": "selector",
       "outbounds": [
-        "📌单选节点",
-        "🇭🇰香港节点",
-        "🇯🇵日本节点",
-        "🇰🇷韩国节点",
-        "🇹🇼台湾节点",
-        "🇸🇬新加坡节点",
-        "🇺🇸美国节点"
+        "单选节点",
+        "香港节点",
+        "日本节点",
+        "韩国节点",
+        "台湾节点",
+        "新加坡节点",
+        "美国节点"
       ],
       "interrupt_exist_connections": true
     }
   ],
   "route": {
     "rules": [
-      {
-        "clash_mode": "direct",
-        "outbound": "🐢Direct"
-      },
-      {
-        "clash_mode": "global",
-        "outbound": "🚀FinalOut"
-      },
       {
         "action": "sniff"
       },
@@ -290,11 +265,33 @@
         "action": "hijack-dns"
       },
       {
+        "rule_set": [
+          "geosite-private"
+        ],
+        "outbound": "direct"
+      },
+      {
+        "ip_is_private": true,
+        "outbound": "direct"
+      },
+      {
+        "clash_mode": "direct",
+        "outbound": "direct"
+      },
+      {
+        "clash_mode": "global",
+        "outbound": "finalout"
+      },
+      {
         "type": "logical",
         "mode": "or",
         "rules": [
           {
             "port": 853
+          },
+          {
+            "network": "udp",
+            "port": 443
           },
           {
             "protocol": "stun"
@@ -310,47 +307,37 @@
       },
       {
         "protocol": "bittorrent",
-        "outbound": "🐢Direct"
-      },
-      {
-        "rule_set": [
-          "geosite-private"
-        ],
-        "outbound": "🐢Direct"
-      },
-      {
-        "ip_is_private": true,
-        "outbound": "🐢Direct"
+        "outbound": "direct"
       },
       {
         "rule_set": [
           "geosite-category-games@cn"
         ],
-        "outbound": "🐢Direct"
-      },
-      {
-        "rule_set": [
-          "geosite-cn"
-        ],
-        "outbound": "🐢Direct"
-      },
-      {
-        "rule_set": [
-          "geoip-cn"
-        ],
-        "outbound": "🐢Direct"
-      },
-      {
-        "rule_set": [
-          "geosite-ai"
-        ],
-        "outbound": "🦄AI"
+        "outbound": "direct"
       },
       {
         "rule_set": [
           "geosite-geolocation-!cn"
         ],
-        "outbound": "🚀FinalOut"
+        "outbound": "finalout"
+      },
+      {
+        "rule_set": [
+          "geosite-cn"
+        ],
+        "outbound": "direct"
+      },
+      {
+        "rule_set": [
+          "geosite-ai"
+        ],
+        "outbound": "ai"
+      },
+      {
+        "rule_set": [
+          "geoip-cn"
+        ],
+        "outbound": "direct"
       }
     ],
     "rule_set": [
@@ -358,62 +345,62 @@
         "tag": "geosite-private",
         "type": "remote",
         "format": "binary",
-        "url": "https://gh-proxy.org/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/sing/geo/geosite/private.srs",
-        "download_detour": "🐢Direct",
+        "url": "https://gh-proxy.org/https://raw.githubusercontent.com/metacubex/meta-rules-dat/refs/heads/sing/geo/geosite/private.srs",
+        "download_detour": "direct",
         "update_interval": "3d"
       },
       {
         "tag": "geosite-category-ads-all",
         "type": "remote",
         "format": "binary",
-        "url": "https://gh-proxy.org/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/sing/geo/geosite/category-ads-all.srs",
-        "download_detour": "🐢Direct",
+        "url": "https://gh-proxy.org/https://raw.githubusercontent.com/metacubex/meta-rules-dat/refs/heads/sing/geo/geosite/category-ads-all.srs",
+        "download_detour": "direct",
         "update_interval": "3d"
       },
       {
         "tag": "geosite-category-games@cn",
         "type": "remote",
         "format": "binary",
-        "url": "https://gh-proxy.org/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/sing/geo/geosite/category-games@cn.srs",
-        "download_detour": "🐢Direct",
+        "url": "https://gh-proxy.org/https://raw.githubusercontent.com/metacubex/meta-rules-dat/refs/heads/sing/geo/geosite/category-games@cn.srs",
+        "download_detour": "direct",
         "update_interval": "3d"
       },
       {
         "tag": "geosite-geolocation-!cn",
         "type": "remote",
         "format": "binary",
-        "url": "https://gh-proxy.org/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/sing/geo/geosite/geolocation-!cn.srs",
-        "download_detour": "🐢Direct",
+        "url": "https://gh-proxy.org/https://raw.githubusercontent.com/metacubex/meta-rules-dat/refs/heads/sing/geo/geosite/geolocation-!cn.srs",
+        "download_detour": "direct",
         "update_interval": "3d"
       },
       {
         "tag": "geosite-cn",
         "type": "remote",
         "format": "binary",
-        "url": "https://gh-proxy.org/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/sing/geo/geosite/cn.srs",
-        "download_detour": "🐢Direct",
+        "url": "https://gh-proxy.org/https://raw.githubusercontent.com/metacubex/meta-rules-dat/refs/heads/sing/geo/geosite/cn.srs",
+        "download_detour": "direct",
         "update_interval": "3d"
       },
       {
         "tag": "geoip-cn",
         "type": "remote",
         "format": "binary",
-        "url": "https://gh-proxy.org/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/sing/geo/geoip/cn.srs",
-        "download_detour": "🐢Direct",
+        "url": "https://gh-proxy.org/https://raw.githubusercontent.com/metacubex/meta-rules-dat/refs/heads/sing/geo/geoip/cn.srs",
+        "download_detour": "direct",
         "update_interval": "3d"
       },
       {
         "tag": "geosite-ai",
         "type": "remote",
         "format": "binary",
-        "url": "https://gh-proxy.org/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/sing/geo/geosite/category-ai-!cn.srs",
-        "download_detour": "🐢Direct",
+        "url": "https://gh-proxy.org/https://raw.githubusercontent.com/metacubex/meta-rules-dat/refs/heads/sing/geo/geosite/category-ai-!cn.srs",
+        "download_detour": "direct",
         "update_interval": "3d"
       }
     ],
-    "final": "🚀FinalOut",
+    "final": "finalout",
     "default_domain_resolver": {
-      "server": "DirectDNS"
+      "server": "ali"
     },
     "auto_detect_interface": true
   }
