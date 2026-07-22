@@ -230,7 +230,7 @@
       "interrupt_exist_connections": true
     },
     {
-      "tag": "direct",
+      "tag": "直连",
       "type": "direct"
     },
     {
@@ -354,7 +354,7 @@
         "type": "remote",
         "format": "binary",
         "url": "https://gh-proxy.org/https://raw.githubusercontent.com/metacubex/meta-rules-dat/refs/heads/sing/geo/geosite/private.srs",
-        "download_detour": "direct",
+        "download_detour": "直连",
         "update_interval": "3d"
       },
       {
@@ -362,7 +362,7 @@
         "type": "remote",
         "format": "binary",
         "url": "https://gh-proxy.org/https://raw.githubusercontent.com/metacubex/meta-rules-dat/refs/heads/sing/geo/geosite/category-ads-all.srs",
-        "download_detour": "direct",
+        "download_detour": "直连",
         "update_interval": "3d"
       },
       {
@@ -370,7 +370,7 @@
         "type": "remote",
         "format": "binary",
         "url": "https://gh-proxy.org/https://raw.githubusercontent.com/metacubex/meta-rules-dat/refs/heads/sing/geo/geosite/category-games@cn.srs",
-        "download_detour": "direct",
+        "download_detour": "直连",
         "update_interval": "3d"
       },
       {
@@ -378,7 +378,7 @@
         "type": "remote",
         "format": "binary",
         "url": "https://gh-proxy.org/https://raw.githubusercontent.com/metacubex/meta-rules-dat/refs/heads/sing/geo/geosite/geolocation-!cn.srs",
-        "download_detour": "direct",
+        "download_detour": "直连",
         "update_interval": "3d"
       },
       {
@@ -386,7 +386,7 @@
         "type": "remote",
         "format": "binary",
         "url": "https://gh-proxy.org/https://raw.githubusercontent.com/metacubex/meta-rules-dat/refs/heads/sing/geo/geosite/cn.srs",
-        "download_detour": "direct",
+        "download_detour": "直连",
         "update_interval": "3d"
       },
       {
@@ -394,7 +394,7 @@
         "type": "remote",
         "format": "binary",
         "url": "https://gh-proxy.org/https://raw.githubusercontent.com/metacubex/meta-rules-dat/refs/heads/sing/geo/geoip/cn.srs",
-        "download_detour": "direct",
+        "download_detour": "直连",
         "update_interval": "3d"
       },
       {
@@ -402,7 +402,7 @@
         "type": "remote",
         "format": "binary",
         "url": "https://gh-proxy.org/https://raw.githubusercontent.com/metacubex/meta-rules-dat/refs/heads/sing/geo/geosite/category-ai-!cn.srs",
-        "download_detour": "direct",
+        "download_detour": "直连",
         "update_interval": "3d"
       }
     ],
