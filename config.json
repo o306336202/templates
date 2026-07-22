@@ -37,7 +37,7 @@
         "tag": "google",
         "type": "https",
         "server": "8.8.8.8",
-        "detour": "finalout"
+        "detour": "默认代理"
       },
       {
         "tag": "fakeip",
@@ -248,7 +248,7 @@
       "interrupt_exist_connections": true
     },
     {
-      "tag": "finalout",
+      "tag": "默认代理",
       "type": "selector",
       "outbounds": [
         "单选节点",
@@ -327,7 +327,7 @@
         "rule_set": [
           "geosite-geolocation-!cn"
         ],
-        "outbound": "finalout"
+        "outbound": "默认代理"
       },
       {
         "rule_set": [
@@ -406,7 +406,7 @@
         "update_interval": "3d"
       }
     ],
-    "final": "finalout",
+    "final": "默认代理",
     "default_domain_resolver": {
       "server": "ali"
     },
