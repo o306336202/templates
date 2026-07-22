@@ -420,7 +420,7 @@
     ],
     "final": "finalout",
     "default_domain_resolver": {
-      "server": "directdns"
+      "server": "google"
     },
     "auto_detect_interface": true
   }
