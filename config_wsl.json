@@ -90,12 +90,6 @@
       "strict_route": true,
       "endpoint_independent_nat": false,
       "stack": "system"
-    },
-    {
-      "type": "mixed",
-      "tag": "mixed-in",
-      "listen": "0.0.0.0",
-      "listen_port": 7890
     }
   ],
   "outbounds": [
@@ -129,7 +123,7 @@
           ]
         }
       ],
-      "url": "https://www.gstatic.com/generate_204",
+      "url": "https://clients1.google.com/generate_204",
       "interval": "3m",
       "tolerance": 100,
       "interrupt_exist_connections": true
@@ -148,8 +142,8 @@
           ]
         }
       ],
-      "url": "https://www.gstatic.com/generate_204",
-      "interval": "10m",
+      "url": "https://clients1.google.com/generate_204",
+      "interval": "3m",
       "tolerance": 100,
       "interrupt_exist_connections": true
     },
@@ -167,8 +161,8 @@
           ]
         }
       ],
-      "url": "https://www.gstatic.com/generate_204",
-      "interval": "10m",
+      "url": "https://clients1.google.com/generate_204",
+      "interval": "3m",
       "tolerance": 100,
       "interrupt_exist_connections": true
     },
@@ -186,8 +180,8 @@
           ]
         }
       ],
-      "url": "https://www.gstatic.com/generate_204",
-      "interval": "10m",
+      "url": "https://clients1.google.com/generate_204",
+      "interval": "3m",
       "tolerance": 100,
       "interrupt_exist_connections": true
     },
@@ -205,8 +199,8 @@
           ]
         }
       ],
-      "url": "https://www.gstatic.com/generate_204",
-      "interval": "10m",
+      "url": "https://clients1.google.com/generate_204",
+      "interval": "3m",
       "tolerance": 100,
       "interrupt_exist_connections": true
     },
@@ -224,8 +218,8 @@
           ]
         }
       ],
-      "url": "https://www.gstatic.com/generate_204",
-      "interval": "10m",
+      "url": "https://clients1.google.com/generate_204",
+      "interval": "3m",
       "tolerance": 100,
       "interrupt_exist_connections": true
     },

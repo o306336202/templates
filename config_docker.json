@@ -120,8 +120,8 @@
           ]
         }
       ],
-      "url": "https://www.gstatic.com/generate_204",
-      "interval": "10m",
+      "url": "https://clients1.google.com/generate_204",
+      "interval": "3m",
       "tolerance": 100,
       "interrupt_exist_connections": true
     },
@@ -139,8 +139,8 @@
           ]
         }
       ],
-      "url": "https://www.gstatic.com/generate_204",
-      "interval": "10m",
+      "url": "https://clients1.google.com/generate_204",
+      "interval": "3m",
       "tolerance": 100,
       "interrupt_exist_connections": true
     },
@@ -158,8 +158,8 @@
           ]
         }
       ],
-      "url": "https://www.gstatic.com/generate_204",
-      "interval": "10m",
+      "url": "https://clients1.google.com/generate_204",
+      "interval": "3m",
       "tolerance": 100,
       "interrupt_exist_connections": true
     },
@@ -177,8 +177,8 @@
           ]
         }
       ],
-      "url": "https://www.gstatic.com/generate_204",
-      "interval": "10m",
+      "url": "https://clients1.google.com/generate_204",
+      "interval": "3m",
       "tolerance": 100,
       "interrupt_exist_connections": true
     },
@@ -196,8 +196,8 @@
           ]
         }
       ],
-      "url": "https://www.gstatic.com/generate_204",
-      "interval": "10m",
+      "url": "https://clients1.google.com/generate_204",
+      "interval": "3m",
       "tolerance": 100,
       "interrupt_exist_connections": true
     },
@@ -215,8 +215,8 @@
           ]
         }
       ],
-      "url": "https://www.gstatic.com/generate_204",
-      "interval": "10m",
+      "url": "https://clients1.google.com/generate_204",
+      "interval": "3m",
       "tolerance": 100,
       "interrupt_exist_connections": true
     },
