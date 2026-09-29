@@ -289,32 +289,76 @@
     {
       "tag": "日本手动",
       "type": "selector",
-      "outbounds": []
+      "outbounds": [
+        "{all}"
+      ],
+      "filter": [
+        {
+          "action": "include",
+          "keywords": [
+            "🇯🇵|日本|jp|japan"
+          ]
+        }
+      ]
     },
     {
       "tag": "狮城手动",
       "type": "selector",
-      "outbounds": []
+      "outbounds": [
+        "{all}"
+      ],
+      "filter": [
+        {
+          "action": "include",
+          "keywords": [
+            "🇸🇬|新加坡|sg|singapore"
+          ]
+        }
+      ]
     },
     {
       "tag": "香港手动",
       "type": "selector",
-      "outbounds": []
+      "outbounds": [
+        "{all}"
+      ],
+      "filter": [
+        {
+          "action": "include",
+          "keywords": [
+            "🇭🇰|香港|hk|hong kong"
+          ]
+        }
+      ]
     },
     {
       "tag": "美国手动",
       "type": "selector",
-      "outbounds": []
+      "outbounds": [
+        "{all}"
+      ],
+      "filter": [
+        {
+          "action": "include",
+          "keywords": [
+            "🇺🇸|美国|us|usa|united states"
+          ]
+        }
+      ]
     },
     {
       "tag": "手动选择",
       "type": "selector",
-      "outbounds": []
+      "outbounds": [
+        "{all}"
+      ]
     },
     {
       "tag": "自动选择",
       "type": "urltest",
-      "outbounds": [],
+      "outbounds": [
+        "{all}"
+      ],
       "url": "https://clients1.google.com/generate_204",
       "interval": "30m",
       "tolerance": 100
